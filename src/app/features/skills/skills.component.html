@@ -1,0 +1,16 @@
+<app-cyber-panel themeColor="pink" title="01 // TECHNICAL_STACK_MODULE" cutSide="bl">
+  <div class="space-y-6">
+    @for (cat of data; track cat.category) {
+      <div>
+        <h4 class="font-orbitron text-xs font-bold text-cyber-cyan uppercase tracking-wider mb-4">// {{ cat.category }}</h4>
+        <div class="space-y-3.5">
+          @for (item of cat.items; track item.name) {
+            <app-progress-meter [label]="item.name"
+                                [value]="item.level"
+                                color="cyan"></app-progress-meter>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</app-cyber-panel>

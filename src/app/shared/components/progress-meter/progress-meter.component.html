@@ -1,0 +1,21 @@
+<div class="space-y-1.5 select-none font-share">
+  <div class="flex justify-between items-center text-xs tracking-wider">
+    <span class="text-cyber-gray font-semibold">{{ label }}</span>
+    <span [ngClass]="getColorClass()" class="font-extrabold">{{ value }}%</span>
+  </div>
+  
+  <!-- Visual segment meters -->
+  <div class="flex items-center gap-2">
+    <!-- ASCII display (highly accessible for screen readers, or standard printable style) -->
+    <span [ngClass]="getColorClass()" class="text-sm font-semibold tracking-tighter block md:hidden leading-none">
+      [{{ meterString }}]
+    </span>
+    
+    <!-- CSS bar indicator (beautiful visual presentation for desktop/wider devices) -->
+    <div class="hidden md:block flex-1 h-2.5 bg-cyber-bg-card border border-cyber-gray/20 p-0.5">
+      <div [ngClass]="getBarColorClass()"
+           class="h-full transition-all duration-500 ease-out"
+           [style.width.%]="value"></div>
+    </div>
+  </div>
+</div>

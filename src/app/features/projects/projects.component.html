@@ -1,0 +1,45 @@
+<app-cyber-panel themeColor="pink" title="03 // CHROME_RUNS_SHOWCASE" cutSide="bl">
+  <!-- Project Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    @for (proj of data; track proj.name) {
+      <div class="border border-cyber-cyan/30 bg-cyber-bg-card p-5 relative cyber-cut-small flex flex-col justify-between hover:border-cyber-pink hover:shadow-[0_0_10px_rgba(255,0,85,0.15)] group transition-all duration-300">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <h4 class="font-orbitron text-sm font-extrabold tracking-wider text-cyber-cyan group-hover:text-cyber-pink transition-colors">
+              {{ proj.name }}
+            </h4>
+            <span class="text-[9px] font-share text-cyber-yellow border border-cyber-yellow/30 px-1.5 py-0.5 uppercase">{{ proj.status }}</span>
+          </div>
+          <p class="text-xs text-cyber-text leading-relaxed mb-4">
+            {{ proj.description }}
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5">
+            @for (tag of proj.tags; track tag) {
+              <app-glow-badge [text]="tag" color="cyan"></app-glow-badge>
+            }
+          </div>
+
+          <!-- Project link buttons -->
+          <div class="flex items-center gap-4 text-xs font-orbitron tracking-wider pt-2 border-t border-cyber-gray/10 no-print">
+            @if (proj.github) {
+              <a [href]="proj.github" target="_blank" rel="noopener" (click)="playClick()" (mouseenter)="playHover()"
+                 class="text-cyber-cyan hover:text-cyber-pink flex items-center gap-1.5 transition-colors font-semibold uppercase">
+                &lt;src&gt; github
+              </a>
+            }
+            @if (proj.demo) {
+              <a [href]="proj.demo" target="_blank" rel="noopener" (click)="playClick()" (mouseenter)="playHover()"
+                 class="text-cyber-yellow hover:text-cyber-pink flex items-center gap-1.5 transition-colors font-semibold uppercase">
+                &lt;run&gt; demo
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</app-cyber-panel>

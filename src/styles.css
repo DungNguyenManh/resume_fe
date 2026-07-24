@@ -1,3 +1,219 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+@theme {
+  --color-cyber-bg: #07070a;
+  --color-cyber-bg-dim: #0c0d14;
+  --color-cyber-bg-card: #121320;
+  --color-cyber-yellow: #fcee0a;
+  --color-cyber-yellow-dim: #ccbe04;
+  --color-cyber-cyan: #00f0ff;
+  --color-cyber-cyan-dim: #00c6d4;
+  --color-cyber-pink: #ff0055;
+  --color-cyber-pink-dim: #d40043;
+  --color-cyber-green: #00ff66;
+  --color-cyber-green-dim: #00d451;
+  --color-cyber-darker: #030305;
+  --color-cyber-gray: #4d4f68;
+  --color-cyber-text: #b5b7cc;
+
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-share: 'Share Tech Mono', monospace;
+
+  --animate-cyber-flicker: cyber-flicker 0.2s infinite alternate;
+  --animate-cyber-scan: cyber-scan 10s linear infinite;
+  --animate-cyber-pulse: cyber-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-cyber-glow: cyber-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes cyber-flicker {
+  0% { opacity: 0.985; filter: contrast(105%); }
+  50% { opacity: 1; filter: contrast(100%); }
+  100% { opacity: 0.99; filter: contrast(103%); }
+}
+
+@keyframes cyber-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes cyber-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes cyber-glow {
+  from {
+    text-shadow: 0 0 4px rgba(0, 240, 255, 0.4), 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+  to {
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
+  }
+}
+
+/* Custom Base Styles */
+html, body {
+  background-color: var(--color-cyber-bg);
+  color: var(--color-cyber-text);
+  font-family: var(--font-rajdhani);
+  font-size: 16px;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cyber-bg-dim);
+  border-left: 1px solid rgba(255, 0, 85, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cyber-pink);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyber-cyan);
+}
+
+/* Utility classes for Corner Cuts (Cyberpunk panels) */
+.cyber-cut-tr {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+}
+
+.cyber-cut-bl {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.cyber-cut-both {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.cyber-cut-small {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* Glowing Neon Elements */
+.glow-cyan {
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.6), 0 0 10px rgba(0, 240, 255, 0.4);
+}
+.glow-pink {
+  text-shadow: 0 0 5px rgba(255, 0, 85, 0.6), 0 0 10px rgba(255, 0, 85, 0.4);
+}
+.glow-yellow {
+  text-shadow: 0 0 5px rgba(252, 238, 10, 0.6), 0 0 10px rgba(252, 238, 10, 0.4);
+}
+.glow-green {
+  text-shadow: 0 0 5px rgba(0, 255, 102, 0.6), 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+/* Cyber Overlay Grids & Scanlines */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(18, 19, 32, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 19, 32, 0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  
+  .animate-cyber-flicker, 
+  .animate-cyber-scan,
+  .animate-cyber-pulse,
+  .animate-cyber-glow {
+    animation: none !important;
+  }
+
+  .cyber-scanline {
+    display: none !important;
+  }
+}
+
+/* Print Styling */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 12pt !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    text-shadow: none !important;
+    margin-top: 15px !important;
+    margin-bottom: 5px !important;
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 3px !important;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt !important;
+  }
+
+  /* Hide elements not needed in print CV */
+  .no-print,
+  button,
+  .cyber-scanline,
+  .cyber-grid,
+  .cyber-dots,
+  .matrix-canvas,
+  app-terminal,
+  .terminal-container,
+  .sound-widget,
+  .contact-form-btn {
+    display: none !important;
+  }
+
+  /* Grid layout to blocks */
+  .grid {
+    display: block !important;
+  }
+
+  .cyber-cut-tr, .cyber-cut-bl, .cyber-cut-both, .cyber-cut-small {
+    clip-path: none !important;
+    border: 1px solid #cccccc !important;
+    background: #ffffff !important;
+    margin-bottom: 15px !important;
+    padding: 10px !important;
+  }
+
+  .timeline-circuit {
+    border-left: 2px solid #000000 !important;
+    margin-left: 10px !important;
+    padding-left: 15px !important;
+  }
+
+  .timeline-node::before {
+    background: #000000 !important;
+    border: 2px solid #000000 !important;
+  }
+}

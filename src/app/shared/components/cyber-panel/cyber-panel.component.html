@@ -1,0 +1,28 @@
+<div [ngClass]="[getClipClass(), getThemeClass()]"
+     class="border bg-cyber-bg-dim/95 backdrop-blur-md p-6 relative">
+     
+  <!-- Cyber Corner Dots & Highlights -->
+  <span [ngClass]="getCornerClass()" class="absolute top-0 right-0 w-2.5 h-2.5"></span>
+  <span [ngClass]="getCornerClass()" class="absolute bottom-0 left-0 w-8 h-1"></span>
+
+  @if (title) {
+    <h2 class="font-orbitron font-extrabold text-sm uppercase tracking-widest mb-4 flex items-center gap-2"
+        [ngClass]="{
+          'text-cyber-cyan': themeColor === 'cyan',
+          'text-cyber-pink': themeColor === 'pink',
+          'text-cyber-yellow': themeColor === 'yellow',
+          'text-cyber-green': themeColor === 'green'
+        }">
+      <span>[{{ title }}]</span>
+      <span class="h-[1px] flex-1 opacity-20"
+            [ngClass]="{
+              'bg-cyber-cyan': themeColor === 'cyan',
+              'bg-cyber-pink': themeColor === 'pink',
+              'bg-cyber-yellow': themeColor === 'yellow',
+              'bg-cyber-green': themeColor === 'green'
+            }"></span>
+    </h2>
+  }
+
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,29 @@
+<app-cyber-panel themeColor="pink" title="02 // WORK_TIMELINE_GRID" cutSide="bl">
+  <div class="timeline-circuit relative pl-6 border-l border-cyber-cyan/30 space-y-8">
+    @for (xp of data; track xp.company) {
+      <div class="relative">
+        
+        <!-- Circuit Node dot -->
+        <span class="timeline-node absolute -left-[29px] top-1.5 w-3.5 h-3.5 rounded-sm bg-cyber-bg-dim border-2 border-cyber-cyan shadow-[0_0_8px_rgba(0,240,255,0.6)] z-10"></span>
+        
+        <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-1.5 mb-2.5">
+          <h4 class="font-orbitron text-base font-bold text-cyber-cyan uppercase tracking-wider glow-cyan">// {{ xp.company }}</h4>
+          <div class="flex gap-3 text-xs font-share tracking-wider">
+            <span class="px-2 py-0.5 border border-cyber-yellow/40 text-cyber-yellow bg-cyber-yellow/5">{{ xp.role }}</span>
+            <span class="text-cyber-gray font-semibold">{{ xp.period }}</span>
+          </div>
+        </div>
+
+        <ul class="space-y-1.5 text-sm text-cyber-text leading-relaxed list-inside">
+          @for (detail of xp.details; track detail) {
+            <li class="flex items-start gap-2">
+              <span class="text-cyber-pink mr-1 font-semibold">&gt;</span>
+              <span>{{ detail }}</span>
+            </li>
+          }
+        </ul>
+
+      </div>
+    }
+  </div>
+</app-cyber-panel>
