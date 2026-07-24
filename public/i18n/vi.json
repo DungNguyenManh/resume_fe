@@ -1,0 +1,74 @@
+{
+  "header": {
+    "title": "NGUYỄN HOÀNG DƯƠNG // CV",
+    "print": "Tải / In CV PDF"
+  },
+  "profile": {
+    "title": "Kỹ sư phần mềm cấp cao",
+    "sector": "NEO_HANOI // SECTOR_4",
+    "bio": "Hơn 10 năm kinh nghiệm phát triển Angular, tối ưu hóa client-side, thiết kế kiến trúc hệ thống thời gian thực với hiệu suất tuyệt đối. Chuyên gia kết nối UI/UX nâng cao và các hệ thống bảo mật cổng thông tin."
+  },
+  "skills": {
+    "title": "01 // KỸ NĂNG",
+    "categories": {
+      "FRONTEND_ENGINE": "Frontend Engine",
+      "BACKEND_CORE": "Backend Core",
+      "SYSTEMS_OPS": "Hệ thống & Vận hành"
+    }
+  },
+  "experience": {
+    "title": "02 // KINH NGHIỆM",
+    "items": [
+      {
+        "role": "Tech Lead / Kiến trúc sư Front-End",
+        "details": [
+          "Thiết kế kiến trúc Angular thế hệ mới cho hệ thống biểu đồ tài chính thời gian thực.",
+          "Tối ưu hóa thời gian tải trang (LCP) tăng 40%, giảm bundle size xuống 30%.",
+          "Huấn luyện đội ngũ phát triển, xây dựng design system dựa trên Tailwind CSS v4."
+        ]
+      },
+      {
+        "role": "Kỹ sư Angular cấp cao",
+        "details": [
+          "Phát triển ứng dụng Web điều khiển thiết bị IoT thông qua Canvas 2D/3D.",
+          "Xây dựng các Angular custom elements tái sử dụng trong các hệ thống micro-frontend.",
+          "Tối ưu hóa các tiến trình xử lý RxJS luồng dữ liệu phức tạp."
+        ]
+      },
+      {
+        "role": "Lập trình viên Full-Stack",
+        "details": [
+          "Xây dựng trang Dashboard quản trị cho dữ liệu lớn (Big Data).",
+          "Phát triển và bảo trì APIs viết bằng Express, cơ sở dữ liệu PostgreSQL.",
+          "Thiết kế giải pháp phân trang và caching dữ liệu ở client."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "03 // DỰ ÁN",
+    "items": [
+      {
+        "name": "DECK_OVERLORD",
+        "description": "Trình cấu hình Dashboard phong cách HUD Cyberpunk cho phép thiết lập biểu đồ thời gian thực dạng mô đun."
+      },
+      {
+        "name": "LIGHTSPEED_COMPILER",
+        "description": "Hệ thống biên dịch các component động cho phép tải trực tiếp các khối giao diện từ xa (micro-frontends)."
+      },
+      {
+        "name": "NEON_GATEWAY",
+        "description": "Cổng giao tiếp WebSocket phân tán hỗ trợ đồng bộ hóa thông tin thời gian thực giữa 10k+ client."
+      }
+    ]
+  },
+  "contact": {
+    "title": "04 // LIÊN HỆ",
+    "form": {
+      "name": "TÊN / BÍ DANH",
+      "email": "EMAIL BẢO MẬT",
+      "message": "TIN NHẮN MÃ HÓA",
+      "submit": "GỬI DỮ LIỆU"
+    }
+  }
+}

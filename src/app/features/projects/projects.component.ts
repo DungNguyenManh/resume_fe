@@ -1,35 +1,19 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ProjectNode } from '../../models/resume.model';
-import { CyberAudioService } from '../../core/cyber-audio.service';
-import { CyberPanelComponent } from '../../shared/components/cyber-panel/cyber-panel.component';
-import { GlowBadgeComponent } from '../../shared/components/glow-badge/glow-badge.component';
 
 /**
- * Projects showcase portfolio component.
- * Features project card grids and audio interaction links.
+ * Renders portfolio project cards.
  */
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, CyberPanelComponent, GlowBadgeComponent],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  private readonly audioService = inject(CyberAudioService);
-
-  // Projects data list
+  // Developer projects dataset
   @Input({ required: true }) data!: ProjectNode[];
-
-  /**
-   * Sound triggers for links interaction
-   */
-  playHover(): void {
-    this.audioService.playHover();
-  }
-
-  playClick(): void {
-    this.audioService.playClick();
-  }
 }

@@ -1,152 +1,100 @@
-@import 'tailwindcss';
+/*
+ * WCAG AA Contrast Checks:
+ * - Text (#3A2E4D) on Lavender (#E6E6FA): 10.17:1 (Passes AA/AAA)
+ * - Text (#3A2E4D) on Ghost White (#F8F8FF): 11.84:1 (Passes AA/AAA)
+ * - Text (#3A2E4D) on Snow (#FAFAFA): 11.99:1 (Passes AA/AAA)
+ * - Text (#3A2E4D) on Lilac (#C8A2C8): 5.64:1 (Passes AA)
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import 'tailwindcss';
 
 @theme {
-  --color-cyber-bg: #07070a;
-  --color-cyber-bg-dim: #0c0d14;
-  --color-cyber-bg-card: #121320;
-  --color-cyber-yellow: #fcee0a;
-  --color-cyber-yellow-dim: #ccbe04;
-  --color-cyber-cyan: #00f0ff;
-  --color-cyber-cyan-dim: #00c6d4;
-  --color-cyber-pink: #ff0055;
-  --color-cyber-pink-dim: #d40043;
-  --color-cyber-green: #00ff66;
-  --color-cyber-green-dim: #00d451;
-  --color-cyber-darker: #030305;
-  --color-cyber-gray: #4d4f68;
-  --color-cyber-text: #b5b7cc;
+  --color-lavender: #E6E6FA;
+  --color-ghost-white: #F8F8FF;
+  --color-gainsboro: #DCDCDC;
+  --color-lilac: #C8A2C8;
+  --color-snow: #FAFAFA;
+  --color-text-primary: #3A2E4D;
 
   --font-orbitron: 'Orbitron', sans-serif;
   --font-rajdhani: 'Rajdhani', sans-serif;
   --font-share: 'Share Tech Mono', monospace;
-
-  --animate-cyber-flicker: cyber-flicker 0.2s infinite alternate;
-  --animate-cyber-scan: cyber-scan 10s linear infinite;
-  --animate-cyber-pulse: cyber-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-cyber-glow: cyber-glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes cyber-flicker {
-  0% { opacity: 0.985; filter: contrast(105%); }
-  50% { opacity: 1; filter: contrast(100%); }
-  100% { opacity: 0.99; filter: contrast(103%); }
-}
-
-@keyframes cyber-scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-@keyframes cyber-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes cyber-glow {
-  from {
-    text-shadow: 0 0 4px rgba(0, 240, 255, 0.4), 0 0 10px rgba(0, 240, 255, 0.2);
-  }
-  to {
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
-  }
 }
 
 /* Custom Base Styles */
 html, body {
-  background-color: var(--color-cyber-bg);
-  color: var(--color-cyber-text);
+  background: linear-gradient(135deg, var(--color-lavender) 0%, var(--color-ghost-white) 100%);
+  background-attachment: fixed;
+  color: var(--color-text-primary);
   font-family: var(--font-rajdhani);
   font-size: 16px;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
 
 /* Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-cyber-bg-dim);
-  border-left: 1px solid rgba(255, 0, 85, 0.1);
+  background: var(--color-ghost-white);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-cyber-pink);
-  border-radius: 0;
+  background: var(--color-lilac);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cyber-cyan);
+  background: var(--color-text-primary);
 }
 
-/* Utility classes for Corner Cuts (Cyberpunk panels) */
-.cyber-cut-tr {
-  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+/* Shared Utility Classes */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  border-radius: 1rem; /* 16px */
+  transition: all 0.3s ease;
 }
 
-.cyber-cut-bl {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+.glass-panel:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08);
 }
 
-.cyber-cut-both {
-  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+/* Liquid glass button style */
+.liquid-button {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 9999px; /* full rounded */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(255, 255, 255, 0.8);
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.cyber-cut-small {
-  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+.liquid-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), inset 0 1px 3px rgba(255, 255, 255, 1);
 }
 
-/* Glowing Neon Elements */
-.glow-cyan {
-  text-shadow: 0 0 5px rgba(0, 240, 255, 0.6), 0 0 10px rgba(0, 240, 255, 0.4);
-}
-.glow-pink {
-  text-shadow: 0 0 5px rgba(255, 0, 85, 0.6), 0 0 10px rgba(255, 0, 85, 0.4);
-}
-.glow-yellow {
-  text-shadow: 0 0 5px rgba(252, 238, 10, 0.6), 0 0 10px rgba(252, 238, 10, 0.4);
-}
-.glow-green {
-  text-shadow: 0 0 5px rgba(0, 255, 102, 0.6), 0 0 10px rgba(0, 255, 102, 0.4);
+.liquid-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03), inset 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
-/* Cyber Overlay Grids & Scanlines */
-.cyber-grid {
-  background-image: 
-    linear-gradient(rgba(18, 19, 32, 0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 19, 32, 0.5) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.cyber-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
-  background-size: 24px 24px;
-}
-
-/* Reduced Motion Settings */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
-  
-  .animate-cyber-flicker, 
-  .animate-cyber-scan,
-  .animate-cyber-pulse,
-  .animate-cyber-glow {
-    animation: none !important;
-  }
-
-  .cyber-scanline {
-    display: none !important;
+/* Reduced Motion Settings & Mobile Performance Fallback */
+@media (prefers-reduced-motion: reduce), (max-width: 768px) {
+  .glass-panel, .liquid-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.95);
   }
 }
 
@@ -155,65 +103,19 @@ html, body {
   html, body {
     background: #ffffff !important;
     color: #000000 !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 12pt !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important;
-    font-family: Arial, sans-serif !important;
-    text-shadow: none !important;
-    margin-top: 15px !important;
-    margin-bottom: 5px !important;
-    border-bottom: 2px solid #000000 !important;
-    padding-bottom: 3px !important;
-  }
-
-  a {
-    color: #000000 !important;
-    text-decoration: underline !important;
-  }
-
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 9pt !important;
-  }
-
-  /* Hide elements not needed in print CV */
-  .no-print,
-  button,
-  .cyber-scanline,
-  .cyber-grid,
-  .cyber-dots,
-  .matrix-canvas,
-  app-terminal,
-  .terminal-container,
-  .sound-widget,
-  .contact-form-btn {
-    display: none !important;
-  }
-
-  /* Grid layout to blocks */
-  .grid {
-    display: block !important;
-  }
-
-  .cyber-cut-tr, .cyber-cut-bl, .cyber-cut-both, .cyber-cut-small {
-    clip-path: none !important;
-    border: 1px solid #cccccc !important;
+  .glass-panel {
     background: #ffffff !important;
-    margin-bottom: 15px !important;
-    padding: 10px !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid #DCDCDC !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid;
   }
-
-  .timeline-circuit {
-    border-left: 2px solid #000000 !important;
-    margin-left: 10px !important;
-    padding-left: 15px !important;
-  }
-
-  .timeline-node::before {
-    background: #000000 !important;
-    border: 2px solid #000000 !important;
+  
+  .no-print {
+    display: none !important;
   }
 }

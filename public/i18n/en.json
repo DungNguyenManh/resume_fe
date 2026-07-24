@@ -1,0 +1,74 @@
+{
+  "header": {
+    "title": "NGUYEN HOANG DUONG // CV",
+    "print": "Download / Print CV PDF"
+  },
+  "profile": {
+    "title": "Senior Software Architect",
+    "sector": "NEO_HANOI // SECTOR_4",
+    "bio": "Over 10 years of experience in Angular development, client-side optimization, and designing real-time system architectures with absolute performance. Expert in advanced UI/UX integration and portal security systems."
+  },
+  "skills": {
+    "title": "01 // SKILLS",
+    "categories": {
+      "FRONTEND_ENGINE": "Frontend Engine",
+      "BACKEND_CORE": "Backend Core",
+      "SYSTEMS_OPS": "Systems & Ops"
+    }
+  },
+  "experience": {
+    "title": "02 // EXPERIENCE",
+    "items": [
+      {
+        "role": "Tech Lead / Front-End Architect",
+        "details": [
+          "Designed next-generation Angular architecture for real-time financial charting systems.",
+          "Optimized Largest Contentful Paint (LCP) by 40%, reduced bundle size by 30%.",
+          "Trained development team, built a design system based on Tailwind CSS v4."
+        ]
+      },
+      {
+        "role": "Senior Angular Engineer",
+        "details": [
+          "Developed Web applications to control IoT devices via Canvas 2D/3D.",
+          "Built reusable Angular custom elements for micro-frontend systems.",
+          "Optimized complex RxJS data stream processing pipelines."
+        ]
+      },
+      {
+        "role": "Full-Stack Developer",
+        "details": [
+          "Built Dashboard administration page for Big Data.",
+          "Developed and maintained APIs written in Express, PostgreSQL database.",
+          "Designed data pagination and caching solutions on the client-side."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "03 // PROJECTS",
+    "items": [
+      {
+        "name": "DECK_OVERLORD",
+        "description": "Cyberpunk HUD style Dashboard configurator allowing modular real-time chart setup."
+      },
+      {
+        "name": "LIGHTSPEED_COMPILER",
+        "description": "Dynamic component compilation system allowing direct loading of remote UI blocks (micro-frontends)."
+      },
+      {
+        "name": "NEON_GATEWAY",
+        "description": "Distributed WebSocket gateway supporting real-time data synchronization across 10k+ clients."
+      }
+    ]
+  },
+  "contact": {
+    "title": "04 // CONTACT",
+    "form": {
+      "name": "NAME / ALIAS",
+      "email": "SECURE_EMAIL",
+      "message": "ENCRYPTED_MESSAGE",
+      "submit": "TRANSMIT_DATA"
+    }
+  }
+}

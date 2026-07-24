@@ -1,29 +1,55 @@
-<app-cyber-panel themeColor="pink" title="02 // WORK_TIMELINE_GRID" cutSide="bl">
-  <div class="timeline-circuit relative pl-6 border-l border-cyber-cyan/30 space-y-8">
-    @for (xp of data; track xp.company) {
-      <div class="relative">
-        
-        <!-- Circuit Node dot -->
-        <span class="timeline-node absolute -left-[29px] top-1.5 w-3.5 h-3.5 rounded-sm bg-cyber-bg-dim border-2 border-cyber-cyan shadow-[0_0_8px_rgba(0,240,255,0.6)] z-10"></span>
-        
-        <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-1.5 mb-2.5">
-          <h4 class="font-orbitron text-base font-bold text-cyber-cyan uppercase tracking-wider glow-cyan">// {{ xp.company }}</h4>
-          <div class="flex gap-3 text-xs font-share tracking-wider">
-            <span class="px-2 py-0.5 border border-cyber-yellow/40 text-cyber-yellow bg-cyber-yellow/5">{{ xp.role }}</span>
-            <span class="text-cyber-gray font-semibold">{{ xp.period }}</span>
-          </div>
+<!-- Section heading -->
+<div class="mb-3">
+  <h3 class="text-xl font-bold text-text-primary border-b-2 border-lilac/40 pb-2 mb-4 tracking-wide uppercase">
+    Experience
+  </h3>
+</div>
+
+<div class="space-y-8">
+  @for (exp of data; track exp.company) {
+    <div>
+      <!-- Company header row -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1 gap-1">
+        <div>
+          <h4 class="text-base font-extrabold text-text-primary">{{ exp.company }}</h4>
+          <p class="text-sm font-semibold text-lilac">{{ exp.role }}</p>
         </div>
-
-        <ul class="space-y-1.5 text-sm text-cyber-text leading-relaxed list-inside">
-          @for (detail of xp.details; track detail) {
-            <li class="flex items-start gap-2">
-              <span class="text-cyber-pink mr-1 font-semibold">&gt;</span>
-              <span>{{ detail }}</span>
-            </li>
-          }
-        </ul>
-
+        <div class="text-right shrink-0">
+          <p class="text-xs text-gray-500">{{ exp.companyLocation }}</p>
+          <p class="text-xs text-gray-400">{{ exp.period }}</p>
+        </div>
       </div>
+
+      <!-- Projects within this experience -->
+      <div class="mt-3 space-y-4">
+        @for (proj of exp.projects; track proj.name) {
+          <div>
+            <!-- Project title (only if not empty) -->
+            @if (proj.name) {
+              <p class="text-sm font-semibold text-text-primary mb-2">
+                Project: <span class="font-bold">{{ proj.name }}</span>
+                @if (proj.teamSize > 0) {
+                  <span class="ml-2 text-gray-400 font-normal">| Team size: {{ proj.teamSize }} members</span>
+                }
+              </p>
+            }
+            <!-- Bullet points -->
+            <ul class="space-y-1.5">
+              @for (bullet of proj.bullets; track bullet) {
+                <li class="flex items-start gap-2 text-sm text-text-primary/80 leading-relaxed">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-lilac shrink-0"></span>
+                  <span [innerHTML]="highlightKeyword(bullet)"></span>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Divider between companies (not after last) -->
+    @if (!$last) {
+      <div class="border-t border-gainsboro pt-2"></div>
     }
-  </div>
-</app-cyber-panel>
+  }
+</div>

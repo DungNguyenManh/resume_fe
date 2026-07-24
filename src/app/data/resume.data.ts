@@ -1,112 +1,135 @@
 import { ResumeData } from '../models/resume.model';
 
 /**
- * Static resume data for Nguyễn Hoàng Dương (Cyber Runner)
- * Centralizes content for separation of concerns and localization.
+ * Static resume dataset for Nguyen Manh Dung — Backend Software Engineer.
+ * All translatable text should be mirrored in /public/i18n/*.json.
  */
 export const RESUME_DATA: ResumeData = {
   profile: {
-    name: 'Nguyễn Hoàng Dương',
-    alias: 'Cyber Runner',
-    title: 'Senior Software Architect',
-    sector: 'NEO_HANOI // SECTOR_4',
-    ip: '192.168.42.1',
-    bio: 'Hơn 10 năm kinh nghiệm phát triển Angular, tối ưu hóa client-side, thiết kế kiến trúc hệ thống thời gian thực với hiệu suất tuyệt đối. Chuyên gia kết nối UI/UX nâng cao và các hệ thống bảo mật cổng thông tin.',
-    status: 'ONLINE // DECK_ACTIVE',
-    avatarText: '</>'
+    name: 'Nguyen Manh Dung',
+    title: 'Backend Software Engineer',
+    location: 'Tan Phu, Ho Chi Minh City',
+    email: 'dungnm11123@gmail.com',
+    phone: '+84 090-369-8954',
+    linkedin: 'dungnm-software-engineer',
+    careerObjective: `Driven Software Engineer aiming to transition into a Senior role and ultimately a Technical Lead within 3 years. I look to leverage my analytical backend expertise to ensure system stability, while gaining hands-on experience in team coordination and human dynamics to deliver robust, end-to-end software solutions.`,
+    summary: `I'm a software engineer, and my main job is building and maintaining the "behind-the-scenes" part of applications — the part users never see, but the part that determines whether an app runs smoothly, lags, or breaks when many people are using it at the same time.
+
+I enjoy work that requires careful thinking before acting, not just getting things done quickly. I always try to fully understand a problem before proposing a solution, and I consider multiple approaches before choosing the best one, rather than relying on habit or doing whatever is fastest.
+
+For example, when thousands of people spin a gacha or claim rewards at the exact same moment, poor system handling can cause someone to receive a reward multiple times, or cause the data to become inconsistent. My job is to make sure that never happens, no matter how many people are acting at once.
+
+I also analyze deployment and hosting options carefully to find the solution that costs the least for the company, while still keeping the system stable — rather than picking something expensive or unnecessarily complex.
+
+I have years of hands-on experience working on real-world projects, ranging from social media applications to health and fitness apps, and I'm always learning to do better every day.`
   },
+
+  techSkills: [
+    { label: 'Languages & Frameworks', values: 'TypeScript, JavaScript, NestJS, NodeJS' },
+    { label: 'APIs & Databases', values: 'REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j' },
+    { label: 'Queues & Clouds', values: 'RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)' },
+    { label: 'DevOps & QA', values: 'Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest' },
+    { label: 'Architecture & Tools', values: 'Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum' }
+  ],
+
   skills: [
     {
-      category: 'FRONTEND_ENGINE',
+      category: 'Backend',
       items: [
-        { name: 'Angular 19+', level: 95 },
-        { name: 'TypeScript', level: 95 },
-        { name: 'RxJS', level: 90 },
-        { name: 'Tailwind CSS v4', level: 90 },
-        { name: 'Sass', level: 80 },
-        { name: 'Web Audio API', level: 75 },
-        { name: 'HTML5 Canvas', level: 80 }
+        { name: 'NestJS', level: 90 },
+        { name: 'Node.js', level: 88 },
+        { name: 'TypeScript', level: 88 },
+        { name: 'REST APIs', level: 90 },
+        { name: 'GraphQL', level: 78 },
+        { name: 'gRPC', level: 72 }
       ]
     },
     {
-      category: 'BACKEND_CORE',
+      category: 'Data & Messaging',
       items: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express', level: 80 },
-        { name: 'NestJS', level: 80 },
-        { name: 'RESTful APIs', level: 90 },
-        { name: 'WebSockets', level: 80 },
-        { name: 'GraphQL', level: 75 }
+        { name: 'MongoDB', level: 82 },
+        { name: 'Redis', level: 85 },
+        { name: 'RabbitMQ', level: 80 },
+        { name: 'BullMQ', level: 78 },
+        { name: 'MariaDB', level: 74 },
+        { name: 'Neo4j', level: 65 }
       ]
     },
     {
-      category: 'SYSTEMS_OPS',
+      category: 'Cloud & Ops',
       items: [
-        { name: 'Docker', level: 75 },
-        { name: 'PostgreSQL', level: 80 },
-        { name: 'Redis', level: 75 },
-        { name: 'Git', level: 90 },
-        { name: 'CI/CD Pipelines', level: 80 },
-        { name: 'AWS', level: 70 }
+        { name: 'AWS (EC2, S3, CF)', level: 75 },
+        { name: 'Docker', level: 78 },
+        { name: 'Nginx', level: 70 },
+        { name: 'New Relic', level: 72 },
+        { name: 'CI/CD (Bitbucket)', level: 75 },
+        { name: 'Jest', level: 70 }
       ]
     }
   ],
+
   experiences: [
     {
-      company: 'NEO_GENESIS CORP',
-      role: 'Tech Lead / Front-End Architect',
-      period: '2022 - Nay',
-      details: [
-        'Thiết kế kiến trúc Angular thế hệ mới cho hệ thống biểu đồ tài chính thời gian thực.',
-        'Tối ưu hóa thời gian tải trang (LCP) tăng 40%, giảm bundle size xuống 30%.',
-        'Huấn luyện đội ngũ phát triển, xây dựng design system dựa trên Tailwind CSS v4.'
+      company: 'MetaGRIT Co., Ltd.',
+      companyLocation: 'Metro Tower, TPHCM',
+      role: 'Backend Software Engineer',
+      period: 'Sep 2024 – Jun 2026',
+      projects: [
+        {
+          name: 'Ecosystem (Pachinavi, Pachinator, Coupon)',
+          teamSize: 8,
+          bullets: [
+            'Newsfeed Ranking: Researched and designed a 2-stage newsfeed ranking pipeline combining implicit feedback scoring and time-decay with cron-based trending updates, improving content relevance for personalized "For You" feeds.',
+            'Hybrid Fan-out & Graph DB: Implemented a Hybrid Fan-out (Push/Pull) strategy for high-follower accounts, cutting newsfeed API response time from over 1s to under 200ms; replaced multi-table SQL joins with native Neo4j graph traversal for deep relationship queries.',
+            'CQRS & Architecture: Proposed and implemented a CQRS architecture with NestJS\'s CommandBus (Mediator pattern), decoupling business logic from controllers and encapsulating each use case into a dedicated command handler for extensibility and maintainability.',
+            'Concurrency & Distributed Locks: Prevented duplicate rewards and data corruption during high-concurrency gacha events by processing requests asynchronously with BullMQ and serializing claims via Redis Distributed Locks (Redlock), maintaining zero data-loss under traffic surges.',
+            'Microservices Migration: Proposed and implemented the migration of a monolithic system into standalone microservices (Chat, Coupon, System) to eliminate full-system rebuild/deploy (~20 min); set up gRPC communication between services and deployed on AWS EC2.',
+            'RabbitMQ Batching: Prevented thundering-herd failures during 20,000+ notification broadcasts by batching RabbitMQ consumers into groups of 500, keeping downstream CPU utilization stable under 40%.',
+            'Maintenance: Proactively refactored and maintained API endpoints based on insights from New Relic APM.',
+            'Testing & CI/CD: Maintained 90%+ Jest test coverage for business-critical modules; delivered production releases via Bitbucket CI/CD pipelines, monitoring Docker containers and logs in staging under Agile/Scrum.',
+            'Mentorship & Onboarding: Mentored 2 interns through code reviews on NestJS best practices, helping them ramp up on the codebase and improve code quality.'
+          ]
+        },
+        {
+          name: 'Enik (Cross-Platform Health & Fitness Platform)',
+          teamSize: 2,
+          bullets: [
+            'Adapter Pattern & Caching: Designed and implemented an Adapter Pattern after evaluating direct-SDK-integration and wrapper-service alternatives, isolating core services from storage-provider SDK changes; built a Redis-based Proxy caching pipeline in front of core services, reducing direct database reads by 80% and latency during peak traffic.',
+            'GraphQL Optimization: Reduced frontend network overhead by consolidating 4–5 REST API calls into a single GraphQL query for dashboard metrics, notification status, and related resources — eliminating redundant round-trips on page load.',
+            'Real-time Socket.io: Replaced polling with Socket.io to push real-time updates for workout progress, heart rate, calories, step count, and in-app notification badges.',
+            'AWS S3 & CloudFront: Reduced fitness video startup latency from ~800ms to under 150ms by setting up a video delivery pipeline on Amazon S3 and CloudFront CDN.',
+            'A/B Testing: Built an A/B testing pipeline to evaluate UI/UX experiments against real usage data, enabling data-driven release decisions that improved onboarding completion rate by 15%.'
+          ]
+        }
       ]
     },
     {
-      company: 'CYBER_TECH LABS',
-      role: 'Senior Angular Engineer',
-      period: '2018 - 2022',
-      details: [
-        'Phát triển ứng dụng Web điều khiển thiết bị IoT thông qua Canvas 2D/3D.',
-        'Xây dựng các Angular custom elements tái sử dụng trong các hệ thống micro-frontend.',
-        'Tối ưu hóa các tiến trình xử lý RxJS luồng dữ liệu phức tạp.'
-      ]
-    },
-    {
-      company: 'RETRO_SYNTH SOFTWARE',
-      role: 'Full-Stack Developer',
-      period: '2015 - 2018',
-      details: [
-        'Xây dựng trang Dashboard quản trị cho dữ liệu lớn (Big Data).',
-        'Phát triển và bảo trì APIs viết bằng Express, cơ sở dữ liệu PostgreSQL.',
-        'Thiết kế giải pháp phân trang và caching dữ liệu ở client.'
+      company: 'VNPT IT',
+      companyLocation: 'Information Technology Center – VNPT, TPHCM',
+      role: 'Intern Backend Developer',
+      period: 'Mar 2024 – Aug 2024',
+      projects: [
+        {
+          name: '',
+          teamSize: 0,
+          bullets: [
+            'Assisted in API Development: Built REST API modules for internal features using NestJS and TypeScript, following the project\'s established Repository and Template Method patterns to keep CRUD logic consistent and reduce boilerplate code.',
+            'Applied Auth & Security Check: Utilized pre-configured NestJS Guards and JWT templates to implement Role-Based Access Control (RBAC) for assigned internal administration endpoints.',
+            'Adhered to Gitflow: Followed strict Gitflow branching strategies and actively participated in peer code reviews to maintain repository health and code quality.'
+          ]
+        }
       ]
     }
   ],
-  projects: [
+
+  education: [
     {
-      name: 'DECK_OVERLORD',
-      description: 'Trình cấu hình Dashboard phong cách HUD Cyberpunk cho phép thiết lập biểu đồ thời gian thực dạng mô đun.',
-      tags: ['Angular', 'Canvas API', 'Tailwind CSS'],
-      status: 'STABLE // v2.4',
-      github: 'https://github.com/cyber-runner/deck-overlord',
-      demo: 'https://cyber-cv.net/deck-overlord'
-    },
-    {
-      name: 'LIGHTSPEED_COMPILER',
-      description: 'Hệ thống biên dịch các component động cho phép tải trực tiếp các khối giao diện từ xa (micro-frontends).',
-      tags: ['Angular Elements', 'TypeScript', 'Vite'],
-      status: 'STABLE // v1.2',
-      github: 'https://github.com/cyber-runner/lightspeed-compiler',
-      demo: 'https://cyber-cv.net/lightspeed'
-    },
-    {
-      name: 'NEON_GATEWAY',
-      description: 'Cổng giao tiếp WebSocket phân tán hỗ trợ đồng bộ hóa thông tin thời gian thực giữa 10k+ client.',
-      tags: ['Node.js', 'RxJS', 'WebSockets'],
-      status: 'DEPRECATED // v0.9',
-      github: 'https://github.com/cyber-runner/neon-gateway'
+      institution: 'Hong Bang International University',
+      location: 'Binh Thanh, TPHCM',
+      degree: 'Bachelor of Software Engineering',
+      period: 'Oct 2021 – Dec 2024'
     }
   ]
 };
+
 export type ResumeDataType = typeof RESUME_DATA;

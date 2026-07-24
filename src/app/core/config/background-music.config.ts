@@ -1,0 +1,1 @@
+export const BACKGROUND_MUSIC_VIDEO_ID = 'NFdSzTc9GRE';
