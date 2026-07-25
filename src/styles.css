@@ -6,7 +6,7 @@
  * - Text (#3A2E4D) on Lilac (#C8A2C8): 5.64:1 (Passes AA)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -18,13 +18,14 @@
   --color-text-primary: #3A2E4D;
 
   --font-orbitron: 'Orbitron', sans-serif;
-  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-rajdhani: 'Be Vietnam Pro', sans-serif;
   --font-share: 'Share Tech Mono', monospace;
 }
 
 /* Custom Base Styles */
-html, body {
-  background: linear-gradient(135deg, var(--color-lavender) 0%, var(--color-ghost-white) 100%);
+html,
+body {
+  background: linear-gradient(135deg, #D8CCF0 0%, #E6E6FA 45%, #F0EAFB 100%);
   background-attachment: fixed;
   color: var(--color-text-primary);
   font-family: var(--font-rajdhani);
@@ -35,18 +36,33 @@ html, body {
   scroll-behavior: smooth;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200, 162, 200, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(166, 193, 238, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(230, 230, 250, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
 /* Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-ghost-white);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-lilac);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-primary);
 }
@@ -54,12 +70,13 @@ html, body {
 /* Shared Utility Classes */
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-  border-radius: 1rem; /* 16px */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  /* 16px */
   transition: all 0.3s ease;
 }
 
@@ -73,7 +90,8 @@ html, body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 9999px; /* full rounded */
+  border-radius: 9999px;
+  /* full rounded */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(255, 255, 255, 0.8);
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -90,17 +108,30 @@ html, body {
 }
 
 /* Reduced Motion Settings & Mobile Performance Fallback */
-@media (prefers-reduced-motion: reduce), (max-width: 768px) {
-  .glass-panel, .liquid-button {
+@media (prefers-reduced-motion: reduce) {
+
+  .glass-panel,
+  .liquid-button {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgba(255, 255, 255, 0.95);
   }
 }
 
+@media (max-width: 768px) {
+
+  .glass-panel,
+  .liquid-button {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
 /* Print Styling */
 @media print {
-  html, body {
+
+  html,
+  body {
     background: #ffffff !important;
     color: #000000 !important;
   }
@@ -114,7 +145,7 @@ html, body {
     margin-bottom: 20px !important;
     page-break-inside: avoid;
   }
-  
+
   .no-print {
     display: none !important;
   }

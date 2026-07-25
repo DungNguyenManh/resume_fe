@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { StorageService } from '../storage.service';
-import { BACKGROUND_MUSIC_VIDEO_ID } from '../config/background-music.config';
+import { BACKGROUND_MUSIC_VIDEO_IDS } from '../config/background-music.config';
 
 declare global {
   interface Window {
@@ -11,6 +11,8 @@ declare global {
 
 /**
  * Manages background audio via YouTube IFrame API.
+ * Randomly picks which of the two tracks plays first on load, then plays
+ * the other track next, then loops both in that same order indefinitely.
  */
 @Injectable({
   providedIn: 'root'
@@ -19,7 +21,7 @@ export class BackgroundMusicService {
   private readonly storageService = inject(StorageService);
   private player: any;
   private apiLoaded = false;
-  
+
   // State exposed to components
   isMuted = signal<boolean>(true);
   isReady = signal<boolean>(false);
@@ -57,17 +59,23 @@ export class BackgroundMusicService {
   initPlayer(elementId: string): void {
     if (typeof window === 'undefined') return;
 
+    // Randomly pick which track plays first; the other one follows it,
+    // then the whole 2-track playlist loops in that same order.
+    const startIndex = Math.random() < 0.5 ? 0 : 1;
+    const firstVideoId = BACKGROUND_MUSIC_VIDEO_IDS[startIndex];
+    const secondVideoId = BACKGROUND_MUSIC_VIDEO_IDS[(startIndex + 1) % BACKGROUND_MUSIC_VIDEO_IDS.length];
+
     window.onYouTubeIframeAPIReady = () => {
       this.player = new window.YT.Player(elementId, {
         height: '1',
         width: '1',
-        videoId: BACKGROUND_MUSIC_VIDEO_ID,
+        videoId: firstVideoId,
         playerVars: {
           autoplay: 1,
           controls: 0,
           disablekb: 1,
           loop: 1,
-          playlist: BACKGROUND_MUSIC_VIDEO_ID, // Required for loop
+          playlist: secondVideoId, // plays after firstVideoId, then the pair loops
           playsinline: 1,
           modestbranding: 1
         },
@@ -91,8 +99,9 @@ export class BackgroundMusicService {
   }
 
   private onPlayerStateChange(event: any): void {
-    // If video ends, it should loop automatically due to playerVars, 
-    // but we can catch YT.PlayerState.ENDED just in case.
+    // With playerVars.loop + playlist set to the two-track pair, YouTube
+    // handles advancing to the next track and looping back automatically.
+    // This is kept only as a defensive fallback.
     if (event.data === window.YT.PlayerState.ENDED) {
       this.player.playVideo();
     }

@@ -1,1 +1,1 @@
-export const BACKGROUND_MUSIC_VIDEO_ID = 'NFdSzTc9GRE';
+export const BACKGROUND_MUSIC_VIDEO_IDS: string[] = ['NFdSzTc9GRE', 'hq21ia6ZoCY'];

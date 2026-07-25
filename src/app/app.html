@@ -1,61 +1,56 @@
 <!-- Background & Layout Wrapper -->
 <div class="relative min-h-screen bg-transparent w-full pb-12">
-  
+
   <!-- HEADER BAR -->
-  <header class="w-full bg-[rgba(255,255,255,0.7)] backdrop-blur-md sticky top-0 z-40 px-4 py-3 shadow-sm border-b border-gainsboro">
+  <header
+    class="w-full bg-[rgba(255,255,255,0.7)] backdrop-blur-md sticky top-0 z-40 px-4 py-3 shadow-sm border-b border-gainsboro">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-      
+
       <!-- Brand Logo -->
       <div class="flex items-center gap-3">
-        <a href="/" class="font-orbitron font-extrabold tracking-widest text-lg text-text-primary hover:text-lilac transition-colors">
-          {{ cvData.profile.name }} // CV
+        <a href="/"
+          class="font-orbitron font-extrabold tracking-widest text-lg text-text-primary hover:text-lilac transition-colors">
+          {{ 'resume.profile.myResume' | translate }}
         </a>
       </div>
 
       <!-- Controls -->
       <div class="flex items-center gap-3">
-        
+
         <!-- Language Switcher -->
         <div class="flex gap-1 bg-ghost-white rounded-full p-1 border border-gainsboro shadow-inner">
           <button (click)="changeLanguage('en')"
-                  [class]="currentLang() === 'en' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                  class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
+            [class]="currentLang() === 'en' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
+            class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
             EN
           </button>
           <button (click)="changeLanguage('vi')"
-                  [class]="currentLang() === 'vi' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                  class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
+            [class]="currentLang() === 'vi' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
+            class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
             VI
           </button>
           <button (click)="changeLanguage('ja')"
-                  [class]="currentLang() === 'ja' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                  class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
+            [class]="currentLang() === 'ja' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
+            class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
             JA
           </button>
         </div>
 
-        <!-- Print CV / PDF -->
-        <button (click)="triggerPrint()"
-                title="Download / Print CV PDF"
-                class="liquid-button flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-text-primary cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-14.326 0C3.768 7.44 3 8.375 3 9.456V15.75a2.25 2.25 0 0 0 2.25 2.25h1.091M9 9h6m-6 3h6" />
-          </svg>
-          PDF
-        </button>
-
         <!-- Audio toggle -->
-        <button (click)="toggleSound()"
-                [title]="audioService.isMuted() ? 'Unmute Audio' : 'Mute Audio'"
-                class="liquid-button p-2 text-text-primary cursor-pointer">
+        <button (click)="toggleSound()" [title]="audioService.isMuted() ? 'Unmute Audio' : 'Mute Audio'"
+          class="liquid-button p-2 text-text-primary cursor-pointer">
           @if (audioService.isMuted()) {
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+          </svg>
           } @else {
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+          </svg>
           }
         </button>
       </div>
@@ -66,12 +61,12 @@
   <div class="hidden print:block w-full border-b-2 border-black pb-4 mb-6 pt-4 px-4">
     <div class="flex justify-between items-end">
       <div>
-        <h1 class="text-3xl font-bold uppercase tracking-wider">{{ cvData.profile.name }}</h1>
-        <p class="text-base font-semibold text-gray-700 mt-1">{{ cvData.profile.title }}</p>
+        <h1 class="text-3xl font-bold uppercase tracking-wider">{{ 'resume.profile.name' | translate }}</h1>
+        <p class="text-base font-semibold text-gray-700 mt-1">{{ 'resume.profile.title' | translate }}</p>
       </div>
       <div class="text-right text-sm">
-        <p>{{ cvData.profile.email }}</p>
-        <p>{{ cvData.profile.phone }}</p>
+        <p>{{ 'resume.profile.email' | translate }}</p>
+        <p>{{ 'resume.profile.phone' | translate }}</p>
       </div>
     </div>
   </div>
@@ -81,44 +76,40 @@
 
     <!-- 1. PROFILE: Name, Title, Contact -->
     <section id="profile" class="glass-panel p-6 md:p-8">
-      <app-profile [data]="cvData.profile"></app-profile>
+      <app-profile></app-profile>
     </section>
 
     <!-- 2. CAREER OBJECTIVE -->
     <section id="career-objective" class="glass-panel p-6 md:p-8">
-      <app-career-objective [text]="cvData.profile.careerObjective"></app-career-objective>
+      <app-career-objective></app-career-objective>
     </section>
 
     <!-- 3. SUMMARY -->
     <section id="summary" class="glass-panel p-6 md:p-8">
-      <app-summary [rawText]="cvData.profile.summary"></app-summary>
+      <app-summary></app-summary>
     </section>
 
     <!-- 4. EXPERIENCE -->
     <section id="experience" class="glass-panel p-6 md:p-8">
-      <app-experience [data]="cvData.experiences"></app-experience>
+      <app-experience></app-experience>
     </section>
 
     <!-- 5. TECHNICAL SKILLS -->
     <section id="tech-skills" class="glass-panel p-6 md:p-8">
-      <app-tech-skills [data]="cvData.techSkills"></app-tech-skills>
+      <app-tech-skills></app-tech-skills>
     </section>
 
     <!-- 6. EDUCATION -->
     <section id="education" class="glass-panel p-6 md:p-8">
-      <app-education [data]="cvData.education"></app-education>
-    </section>
-
-    <!-- 7. CONTACT FORM (no-print, interactive only) -->
-    <section id="contact" class="glass-panel p-6 md:p-8 no-print">
-      <app-contact></app-contact>
+      <app-education></app-education>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="max-w-5xl mx-auto w-full px-4 mt-12 pt-6 flex flex-col items-center justify-center text-sm text-gray-400 no-print">
-    <p>&copy; 2026 // {{ cvData.profile.name }} // All rights reserved.</p>
+  <footer
+    class="max-w-5xl mx-auto w-full px-4 mt-12 pt-6 flex flex-col items-center justify-center text-sm text-gray-400 no-print">
+    <p>&copy; 2026 {{ 'resume.profile.name' | translate }}, All rights reserved.</p>
   </footer>
 
   <!-- YOUTUBE BACKGROUND AUDIO -->

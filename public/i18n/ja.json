@@ -1,74 +1,195 @@
 {
-  "header": {
-    "title": "NGUYEN HOANG DUONG // CV",
-    "print": "CVをダウンロード/印刷"
-  },
-  "profile": {
-    "title": "シニアソフトウェアアーキテクト",
-    "sector": "NEO_HANOI // SECTOR_4",
-    "bio": "Angular開発、クライアント側の最適化、および絶対的なパフォーマンスを備えたリアルタイムシステムアーキテクチャの設計において10年以上の経験。高度なUI/UX統合とポータルセキュリティシステムの専門家。"
-  },
-  "skills": {
-    "title": "01 // スキル",
-    "categories": {
-      "FRONTEND_ENGINE": "フロントエンドエンジン",
-      "BACKEND_CORE": "バックエンドコア",
-      "SYSTEMS_OPS": "システムと運用"
-    }
-  },
-  "experience": {
-    "title": "02 // 経験",
-    "items": [
+  "resume": {
+    "profile": {
+      "myResume": "私の履歴書",
+      "name": "Nguyen Manh Dung",
+      "title": "バックエンドソフトウェアエンジニア",
+      "location": "Tan Phu, Ho Chi Minh City",
+      "email": "dungnm11123@gmail.com",
+      "phone": "+84 090-369-8954",
+      "linkedin": "dungnm-software-engineer",
+      "careerObjective": "3年以内にシニアポジションへ、そして将来的にはテクニカルリードへのキャリアアップを目指す、意欲的なソフトウェアエンジニアです。分析力を活かしたバックエンドの専門知識でシステムの安定性を確保しつつ、チーム連携や対人関係の実務経験を積み、堅牢でエンドツーエンドなソフトウェアソリューションを提供することを目指しています。",
+      "summary": "私はソフトウェアエンジニアであり、主な仕事はアプリケーションの「裏側」部分——ユーザーには決して見えないが、多くの人が同時に使用したときにアプリがスムーズに動くか、遅延するか、あるいは壊れるかを左右する部分——を構築・保守することです。\n\n私はただ早く終わらせるだけでなく、行動する前によく考えることが求められる仕事を好みます。解決策を提案する前に問題を十分に理解するよう常に努め、習慣や最速の方法に頼るのではなく、複数のアプローチを検討した上で最適なものを選ぶようにしています。\n\n例えば、何千人ものユーザーが全く同じタイミングでガチャを回したり報酬を受け取ったりする際、システムの処理が不十分だと報酬が重複して付与されたり、データに不整合が生じたりする可能性があります。どれだけ多くの人が同時に操作しても、そのような事態が絶対に起きないようにするのが私の仕事です。\n\nまた、デプロイやホスティングの選択肢を慎重に分析し、高価で不必要に複雑なものを選ぶのではなく、システムの安定性を保ちながら会社にとって最もコストの低いソリューションを見つけるようにしています。\n\nソーシャルメディアアプリケーションからヘルス&フィットネスアプリまで、実際のプロジェクトで長年の実務経験があり、日々より良い仕事ができるよう学び続けています。"
+    },
+    "techSkills": [
       {
-        "role": "テックリード / フロントエンドアーキテクト",
-        "details": [
-          "リアルタイムの財務チャートシステム用の次世代Angularアーキテクチャを設計しました。",
-          "LCP（Largest Contentful Paint）を40％最適化し、バンドルサイズを30％縮小しました。",
-          "開発チームをトレーニングし、Tailwind CSS v4に基づくデザインシステムを構築しました。"
+        "label": "言語・フレームワーク",
+        "values": "TypeScript, JavaScript, NestJS, NodeJS"
+      },
+      {
+        "label": "API・データベース",
+        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
+      },
+      {
+        "label": "キュー・クラウド",
+        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
+      },
+      {
+        "label": "DevOps・QA",
+        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
+      },
+      {
+        "label": "アーキテクチャ・ツール",
+        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
+      }
+    ],
+    "skills": [
+      {
+        "category": "バックエンド",
+        "items": [
+          {
+            "name": "NestJS",
+            "level": 90
+          },
+          {
+            "name": "Node.js",
+            "level": 88
+          },
+          {
+            "name": "TypeScript",
+            "level": 88
+          },
+          {
+            "name": "REST APIs",
+            "level": 90
+          },
+          {
+            "name": "GraphQL",
+            "level": 78
+          },
+          {
+            "name": "gRPC",
+            "level": 72
+          }
         ]
       },
       {
-        "role": "シニアAngularエンジニア",
-        "details": [
-          "2D/3D Canvasを介してIoTデバイスを制御するWebアプリケーションを開発しました。",
-          "マイクロフロントエンドシステム用の再利用可能なAngularカスタム要素を構築しました。",
-          "複雑なRxJSデータストリーム処理パイプラインを最適化しました。"
+        "category": "データ・メッセージング",
+        "items": [
+          {
+            "name": "MongoDB",
+            "level": 82
+          },
+          {
+            "name": "Redis",
+            "level": 85
+          },
+          {
+            "name": "RabbitMQ",
+            "level": 80
+          },
+          {
+            "name": "BullMQ",
+            "level": 78
+          },
+          {
+            "name": "MariaDB",
+            "level": 74
+          },
+          {
+            "name": "Neo4j",
+            "level": 65
+          }
         ]
       },
       {
-        "role": "フルスタック開発者",
-        "details": [
-          "ビッグデータ用のダッシュボード管理ページを構築しました。",
-          "ExpressとPostgreSQLデータベースで書かれたAPIを開発および保守しました。",
-          "クライアント側でのデータページネーションとキャッシュソリューションを設計しました。"
+        "category": "クラウド・運用",
+        "items": [
+          {
+            "name": "AWS (EC2, S3, CF)",
+            "level": 75
+          },
+          {
+            "name": "Docker",
+            "level": 78
+          },
+          {
+            "name": "Nginx",
+            "level": 70
+          },
+          {
+            "name": "New Relic",
+            "level": 72
+          },
+          {
+            "name": "CI/CD (Bitbucket)",
+            "level": 75
+          },
+          {
+            "name": "Jest",
+            "level": 70
+          }
         ]
       }
-    ]
-  },
-  "projects": {
-    "title": "03 // プロジェクト",
-    "items": [
+    ],
+    "experiences": [
       {
-        "name": "DECK_OVERLORD",
-        "description": "モジュール式のリアルタイムチャート設定を可能にするサイバーパンクHUDスタイルのダッシュボードコンフィギュレーター。"
+        "company": "MetaGRIT Co., Ltd.",
+        "companyLocation": "Metro Tower, TPHCM",
+        "role": "バックエンドソフトウェアエンジニア",
+        "period": "Sep 2024 – Jun 2026",
+        "projects": [
+          {
+            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
+            "teamSize": "8名（PM 1名、テスター 1名、バックエンド/CMS 2名、モバイル/Web 4名）",
+            "description": [
+              "Pachinavi：ARスキャン、スピンで報酬獲得、キャンペーン通知、システム通知を備えた大規模ガチャアプリ。",
+              "Pachinator：Pachinavi内のサブモジュールで、メッセージング、メッセージ通知、システム通知、フォロー・いいね・シェア・リポスト・引用・保存などの投稿インタラクションを備えたソーシャルネットワーク機能。",
+              "Coupon：ユーザーが提携店舗で利用できる飲食割引コード/クーポンを保存できるWebプラットフォームで、店舗側も独自の割引クーポンを掲載可能。"
+            ],
+            "bullets": [
+              "Newsfeed Ranking：暗黙的フィードバックスコアリングとtime-decayを組み合わせ、cronベースのトレンド更新を伴う2段階のニュースフィード・ランキングパイプラインを調査・設計し、パーソナライズされた「おすすめ」フィードのコンテンツ関連性を向上。",
+              "Hybrid Fan-out & Graph DB：フォロワー数の多いアカウント向けにHybrid Fan-out（Push/Pull）戦略を実装し、ニュースフィードAPIの応答時間を1秒超から200ミリ秒未満に短縮。複数テーブルのSQL joinをNeo4jによるネイティブなグラフトラバーサルに置き換え、深い関係性クエリに対応。",
+              "CQRS & Architecture：NestJSのCommandBus（Mediatorパターン）を用いたCQRSアーキテクチャを提案・実装し、ビジネスロジックをコントローラーから分離。各ユースケースを専用のコマンドハンドラーにカプセル化し、拡張性と保守性を向上。",
+              "Concurrency & Distributed Locks：高同時アクセスのガチャイベント中にBullMQによる非同期リクエスト処理と、Redis分散ロック（Redlock）による報酬取得のシリアライズを実装し、報酬の重複付与やデータ破損を防止。トラフィック急増時もデータ損失ゼロを維持。",
+              "Microservices Migration：モノリシックシステムを独立したマイクロサービス（Chat、Coupon、System）へ移行することを提案・実装し、システム全体のリビルド/デプロイ（約20分）を不要に。サービス間通信にgRPCを設定し、AWS EC2上にデプロイ。",
+              "RabbitMQ Batching：20,000件以上の通知配信時に発生するサンダリングハード障害を防止するため、RabbitMQコンシューマーを500件単位でバッチ化し、下流のCPU使用率を常時40%未満に安定化。",
+              "Maintenance：New Relic APMから得られた知見をもとに、APIエンドポイントを継続的にリファクタリング・保守。",
+              "Testing & CI/CD：ビジネスクリティカルなモジュールに対してJestテストカバレッジ90%以上を維持。BitbucketのCI/CDパイプラインを通じて本番リリースを実施し、Agile/Scrumのもとステージング環境でDockerコンテナとログを監視。",
+              "Mentorship & Onboarding：インターン2名に対しNestJSのベストプラクティスに関するコードレビューを通じてメンタリングを実施し、コードベースへの早期適応とコード品質向上を支援。"
+            ]
+          },
+          {
+            "name": "Enik（クロスプラットフォーム・ヘルス&フィットネスプラットフォーム）",
+            "teamSize": "2名（バックエンド/CMS 1名、モバイル/Web 1名）",
+            "description": [
+              "ワークアウトの活動量、心拍数、カロリーをモニタリングするアプリと、トレーニングパッケージの申し込みやキャンペーン閲覧が可能なWebプラットフォームで構成。"
+            ],
+            "bullets": [
+              "Adapter Pattern & Caching：SDK直接統合とラッパーサービス方式を比較検討したうえでAdapterパターンを設計・実装し、コアサービスをストレージプロバイダーのSDK変更から分離。コアサービスの前段にRedisベースのProxyキャッシングパイプラインを構築し、直接的なデータベース読み取りをピーク時のレイテンシとともに80%削減。",
+              "GraphQL Optimization：ダッシュボードの指標、通知ステータス、関連リソース取得のために4〜5件のREST API呼び出しを単一のGraphQLクエリに統合し、フロントエンドのネットワークオーバーヘッドを削減。ページ読み込み時の冗長なラウンドトリップを排除。",
+              "Real-time Socket.io：ポーリングをSocket.ioに置き換え、ワークアウトの進捗、心拍数、カロリー、歩数、アプリ内通知バッジをリアルタイムで更新。",
+              "AWS S3 & CloudFront：Amazon S3とCloudFront CDNを用いた動画配信パイプラインを構築し、フィットネス動画の起動遅延を約800ミリ秒から150ミリ秒未満に短縮。",
+              "A/B Testing：実際の利用データに基づいてUI/UXの実験を評価するA/Bテストパイプラインを構築し、データドリブンなリリース判断を可能にすることでオンボーディング完了率を15%改善。"
+            ]
+          }
+        ]
       },
       {
-        "name": "LIGHTSPEED_COMPILER",
-        "description": "リモートUIブロック（マイクロフロントエンド）の直接読み込みを可能にする動的コンポーネントコンパイルシステム。"
-      },
+        "company": "VNPT IT",
+        "companyLocation": "Information Technology Center – VNPT, TPHCM",
+        "role": "バックエンド開発インターン",
+        "period": "Mar 2024 – Aug 2024",
+        "projects": [
+          {
+            "name": "",
+            "teamSize": "",
+            "bullets": [
+              "Assisted in API Development：NestJSとTypeScriptを用いて社内機能向けのREST APIモジュールを開発。プロジェクトで確立されたRepositoryパターンおよびTemplate Methodパターンに従い、CRUDロジックの一貫性を保ちボイラープレートコードを削減。",
+              "Applied Auth & Security Check：事前設定されたNestJS GuardsとJWTテンプレートを活用し、担当する社内管理系エンドポイントに対してロールベースアクセス制御（RBAC）を実装。",
+              "Adhered to Gitflow：厳格なGitflowブランチ戦略を遵守し、リポジトリの健全性とコード品質を維持するためピアコードレビューに積極的に参加。"
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
       {
-        "name": "NEON_GATEWAY",
-        "description": "1万人以上のクライアント間でリアルタイムデータ同期をサポートする分散型WebSocketゲートウェイ。"
+        "institution": "Hong Bang International University",
+        "location": "Binh Thanh, TPHCM",
+        "degree": "ソフトウェア工学 学士",
+        "period": "Oct 2021 – Dec 2024"
       }
     ]
-  },
-  "contact": {
-    "title": "04 // 連絡先",
-    "form": {
-      "name": "名前 / エイリアス",
-      "email": "安全なメール",
-      "message": "暗号化されたメッセージ",
-      "submit": "データ送信"
-    }
   }
 }

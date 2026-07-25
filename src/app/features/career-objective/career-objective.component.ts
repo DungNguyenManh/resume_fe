@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 /**
  * Renders the Career Objective block.
+ * Data is loaded directly from i18n JSON via TranslateService.
  */
 @Component({
   selector: 'app-career-objective',
@@ -15,9 +17,7 @@ import { TranslatePipe } from '@ngx-translate/core';
         Career Objective
       </h3>
     </div>
-    <p class="text-sm leading-relaxed text-text-primary/85">{{ text }}</p>
+    <p class="text-sm leading-relaxed text-text-primary/85">{{ 'resume.profile.careerObjective' | translate }}</p>
   `
 })
-export class CareerObjectiveComponent {
-  @Input({ required: true }) text!: string;
-}
+export class CareerObjectiveComponent {}

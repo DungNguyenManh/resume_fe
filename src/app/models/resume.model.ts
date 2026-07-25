@@ -41,7 +41,8 @@ export interface SkillCategory {
  */
 export interface ExperienceProject {
   name: string;
-  teamSize: number;
+  teamSize: number | string;
+  description?: string[];  // Optional narrative bullets shown before technical bullets
   bullets: string[];
 }
 

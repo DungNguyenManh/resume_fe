@@ -1,74 +1,195 @@
 {
-  "header": {
-    "title": "NGUYEN HOANG DUONG // CV",
-    "print": "Download / Print CV PDF"
-  },
-  "profile": {
-    "title": "Senior Software Architect",
-    "sector": "NEO_HANOI // SECTOR_4",
-    "bio": "Over 10 years of experience in Angular development, client-side optimization, and designing real-time system architectures with absolute performance. Expert in advanced UI/UX integration and portal security systems."
-  },
-  "skills": {
-    "title": "01 // SKILLS",
-    "categories": {
-      "FRONTEND_ENGINE": "Frontend Engine",
-      "BACKEND_CORE": "Backend Core",
-      "SYSTEMS_OPS": "Systems & Ops"
-    }
-  },
-  "experience": {
-    "title": "02 // EXPERIENCE",
-    "items": [
+  "resume": {
+    "profile": {
+      "myResume": "My Resume",
+      "name": "Nguyen Manh Dung",
+      "title": "Backend Software Engineer",
+      "location": "Tan Phu, Ho Chi Minh City",
+      "email": "dungnm11123@gmail.com",
+      "phone": "+84 090-369-8954",
+      "linkedin": "dungnm-software-engineer",
+      "careerObjective": "Driven Software Engineer aiming to transition into a Senior role and ultimately a Technical Lead within 3 years. I look to leverage my analytical backend expertise to ensure system stability, while gaining hands-on experience in team coordination and human dynamics to deliver robust, end-to-end software solutions.",
+      "summary": "I'm a software engineer, and my main job is building and maintaining the \"behind-the-scenes\" part of applications — the part users never see, but the part that determines whether an app runs smoothly, lags, or breaks when many people are using it at the same time.\n\nI enjoy work that requires careful thinking before acting, not just getting things done quickly. I always try to fully understand a problem before proposing a solution, and I consider multiple approaches before choosing the best one, rather than relying on habit or doing whatever is fastest.\n\nFor example, when thousands of people spin a gacha or claim rewards at the exact same moment, poor system handling can cause someone to receive a reward multiple times, or cause the data to become inconsistent. My job is to make sure that never happens, no matter how many people are acting at once.\n\nI also analyze deployment and hosting options carefully to find the solution that costs the least for the company, while still keeping the system stable — rather than picking something expensive or unnecessarily complex.\n\nI have years of hands-on experience working on real-world projects, ranging from social media applications to health and fitness apps, and I'm always learning to do better every day."
+    },
+    "techSkills": [
       {
-        "role": "Tech Lead / Front-End Architect",
-        "details": [
-          "Designed next-generation Angular architecture for real-time financial charting systems.",
-          "Optimized Largest Contentful Paint (LCP) by 40%, reduced bundle size by 30%.",
-          "Trained development team, built a design system based on Tailwind CSS v4."
+        "label": "Languages & Frameworks",
+        "values": "TypeScript, JavaScript, NestJS, NodeJS"
+      },
+      {
+        "label": "APIs & Databases",
+        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
+      },
+      {
+        "label": "Queues & Clouds",
+        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
+      },
+      {
+        "label": "DevOps & QA",
+        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
+      },
+      {
+        "label": "Architecture & Tools",
+        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Backend",
+        "items": [
+          {
+            "name": "NestJS",
+            "level": 90
+          },
+          {
+            "name": "Node.js",
+            "level": 88
+          },
+          {
+            "name": "TypeScript",
+            "level": 88
+          },
+          {
+            "name": "REST APIs",
+            "level": 90
+          },
+          {
+            "name": "GraphQL",
+            "level": 78
+          },
+          {
+            "name": "gRPC",
+            "level": 72
+          }
         ]
       },
       {
-        "role": "Senior Angular Engineer",
-        "details": [
-          "Developed Web applications to control IoT devices via Canvas 2D/3D.",
-          "Built reusable Angular custom elements for micro-frontend systems.",
-          "Optimized complex RxJS data stream processing pipelines."
+        "category": "Data & Messaging",
+        "items": [
+          {
+            "name": "MongoDB",
+            "level": 82
+          },
+          {
+            "name": "Redis",
+            "level": 85
+          },
+          {
+            "name": "RabbitMQ",
+            "level": 80
+          },
+          {
+            "name": "BullMQ",
+            "level": 78
+          },
+          {
+            "name": "MariaDB",
+            "level": 74
+          },
+          {
+            "name": "Neo4j",
+            "level": 65
+          }
         ]
       },
       {
-        "role": "Full-Stack Developer",
-        "details": [
-          "Built Dashboard administration page for Big Data.",
-          "Developed and maintained APIs written in Express, PostgreSQL database.",
-          "Designed data pagination and caching solutions on the client-side."
+        "category": "Cloud & Ops",
+        "items": [
+          {
+            "name": "AWS (EC2, S3, CF)",
+            "level": 75
+          },
+          {
+            "name": "Docker",
+            "level": 78
+          },
+          {
+            "name": "Nginx",
+            "level": 70
+          },
+          {
+            "name": "New Relic",
+            "level": 72
+          },
+          {
+            "name": "CI/CD (Bitbucket)",
+            "level": 75
+          },
+          {
+            "name": "Jest",
+            "level": 70
+          }
         ]
       }
-    ]
-  },
-  "projects": {
-    "title": "03 // PROJECTS",
-    "items": [
+    ],
+    "experiences": [
       {
-        "name": "DECK_OVERLORD",
-        "description": "Cyberpunk HUD style Dashboard configurator allowing modular real-time chart setup."
+        "company": "MetaGRIT Co., Ltd.",
+        "companyLocation": "Metro Tower, TPHCM",
+        "role": "Backend Software Engineer",
+        "period": "Sep 2024 – Jun 2026",
+        "projects": [
+          {
+            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
+            "teamSize": "8 members (1 Project Manager, 1 Tester, 2 Backend - CMS, 4 Mobile - WebApp)",
+            "description": [
+              "Pachinavi: A large-scale gacha app featuring AR scanning, spin-to-win reward claiming, campaign notifications, and system notifications.",
+              "Pachinator: A sub-module within Pachinavi — a social network with messaging, message notifications, system notifications, and post interactions such as follow, like, share, repost, quote, and save.",
+              "Coupon: A web platform where users save food discount codes/vouchers to redeem at partner stores, while shops publish their own discount coupons."
+            ],
+            "bullets": [
+              "Newsfeed Ranking: Researched and designed a 2-stage newsfeed ranking pipeline combining implicit feedback scoring and time-decay with cron-based trending updates, improving content relevance for personalized \"For You\" feeds.",
+              "Hybrid Fan-out & Graph DB: Implemented a Hybrid Fan-out (Push/Pull) strategy for high-follower accounts, cutting newsfeed API response time from over 1s to under 200ms; replaced multi-table SQL joins with native Neo4j graph traversal for deep relationship queries.",
+              "CQRS & Architecture: Proposed and implemented a CQRS architecture with NestJS's CommandBus (Mediator pattern), decoupling business logic from controllers and encapsulating each use case into a dedicated command handler for extensibility and maintainability.",
+              "Concurrency & Distributed Locks: Prevented duplicate rewards and data corruption during high-concurrency gacha events by processing requests asynchronously with BullMQ and serializing claims via Redis Distributed Locks (Redlock), maintaining zero data-loss under traffic surges.",
+              "Microservices Migration: Proposed and implemented the migration of a monolithic system into standalone microservices (Chat, Coupon, System) to eliminate full-system rebuild/deploy (~20 min); set up gRPC communication between services and deployed on AWS EC2.",
+              "RabbitMQ Batching: Prevented thundering-herd failures during 20,000+ notification broadcasts by batching RabbitMQ consumers into groups of 500, keeping downstream CPU utilization stable under 40%.",
+              "Maintenance: Proactively refactored and maintained API endpoints based on insights from New Relic APM.",
+              "Testing & CI/CD: Maintained 90%+ Jest test coverage for business-critical modules; delivered production releases via Bitbucket CI/CD pipelines, monitoring Docker containers and logs in staging under Agile/Scrum.",
+              "Mentorship & Onboarding: Mentored 2 interns through code reviews on NestJS best practices, helping them ramp up on the codebase and improve code quality."
+            ]
+          },
+          {
+            "name": "Enik (Cross-Platform Health & Fitness Platform)",
+            "teamSize": "2 members (1 Backend - CMS, 1 Mobile - WebApp)",
+            "description": [
+              "An app for monitoring workout activity, heart rate, and calories, paired with a web platform for subscribing to training packages and viewing campaigns."
+            ],
+            "bullets": [
+              "Adapter Pattern & Caching: Designed and implemented an Adapter Pattern after evaluating direct-SDK-integration and wrapper-service alternatives, isolating core services from storage-provider SDK changes; built a Redis-based Proxy caching pipeline in front of core services, reducing direct database reads by 80% and latency during peak traffic.",
+              "GraphQL Optimization: Reduced frontend network overhead by consolidating 4–5 REST API calls into a single GraphQL query for dashboard metrics, notification status, and related resources — eliminating redundant round-trips on page load.",
+              "Real-time Socket.io: Replaced polling with Socket.io to push real-time updates for workout progress, heart rate, calories, step count, and in-app notification badges.",
+              "AWS S3 & CloudFront: Reduced fitness video startup latency from ~800ms to under 150ms by setting up a video delivery pipeline on Amazon S3 and CloudFront CDN.",
+              "A/B Testing: Built an A/B testing pipeline to evaluate UI/UX experiments against real usage data, enabling data-driven release decisions that improved onboarding completion rate by 15%."
+            ]
+          }
+        ]
       },
       {
-        "name": "LIGHTSPEED_COMPILER",
-        "description": "Dynamic component compilation system allowing direct loading of remote UI blocks (micro-frontends)."
-      },
+        "company": "VNPT IT",
+        "companyLocation": "Information Technology Center – VNPT, TPHCM",
+        "role": "Intern Backend Developer",
+        "period": "Mar 2024 – Aug 2024",
+        "projects": [
+          {
+            "name": "",
+            "teamSize": "",
+            "bullets": [
+              "Assisted in API Development: Built REST API modules for internal features using NestJS and TypeScript, following the project's established Repository and Template Method patterns to keep CRUD logic consistent and reduce boilerplate code.",
+              "Applied Auth & Security Check: Utilized pre-configured NestJS Guards and JWT templates to implement Role-Based Access Control (RBAC) for assigned internal administration endpoints.",
+              "Adhered to Gitflow: Followed strict Gitflow branching strategies and actively participated in peer code reviews to maintain repository health and code quality."
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
       {
-        "name": "NEON_GATEWAY",
-        "description": "Distributed WebSocket gateway supporting real-time data synchronization across 10k+ clients."
+        "institution": "Hong Bang International University",
+        "location": "Binh Thanh, TPHCM",
+        "degree": "Bachelor of Software Engineering",
+        "period": "Oct 2021 – Dec 2024"
       }
     ]
-  },
-  "contact": {
-    "title": "04 // CONTACT",
-    "form": {
-      "name": "NAME / ALIAS",
-      "email": "SECURE_EMAIL",
-      "message": "ENCRYPTED_MESSAGE",
-      "submit": "TRANSMIT_DATA"
-    }
   }
 }

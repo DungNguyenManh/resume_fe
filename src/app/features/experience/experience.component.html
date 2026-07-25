@@ -6,50 +6,101 @@
 </div>
 
 <div class="space-y-8">
-  @for (exp of data; track exp.company) {
-    <div>
-      <!-- Company header row -->
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1 gap-1">
-        <div>
-          <h4 class="text-base font-extrabold text-text-primary">{{ exp.company }}</h4>
-          <p class="text-sm font-semibold text-lilac">{{ exp.role }}</p>
-        </div>
-        <div class="text-right shrink-0">
-          <p class="text-xs text-gray-500">{{ exp.companyLocation }}</p>
-          <p class="text-xs text-gray-400">{{ exp.period }}</p>
-        </div>
+  @for (exp of experiences(); track exp.company; let expIndex = $index) {
+  <div>
+    <!-- Company header row -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1 gap-1">
+      <div>
+        <h4 class="text-base font-extrabold text-text-primary">{{ exp.company }}</h4>
+        <p class="text-sm font-semibold text-lilac">{{ exp.role }}</p>
       </div>
-
-      <!-- Projects within this experience -->
-      <div class="mt-3 space-y-4">
-        @for (proj of exp.projects; track proj.name) {
-          <div>
-            <!-- Project title (only if not empty) -->
-            @if (proj.name) {
-              <p class="text-sm font-semibold text-text-primary mb-2">
-                Project: <span class="font-bold">{{ proj.name }}</span>
-                @if (proj.teamSize > 0) {
-                  <span class="ml-2 text-gray-400 font-normal">| Team size: {{ proj.teamSize }} members</span>
-                }
-              </p>
-            }
-            <!-- Bullet points -->
-            <ul class="space-y-1.5">
-              @for (bullet of proj.bullets; track bullet) {
-                <li class="flex items-start gap-2 text-sm text-text-primary/80 leading-relaxed">
-                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-lilac shrink-0"></span>
-                  <span [innerHTML]="highlightKeyword(bullet)"></span>
-                </li>
-              }
-            </ul>
-          </div>
-        }
+      <div class="text-right shrink-0">
+        <p class="text-xs text-gray-500">{{ exp.companyLocation }}</p>
+        <p class="text-xs text-gray-400">{{ exp.period }}</p>
       </div>
     </div>
 
-    <!-- Divider between companies (not after last) -->
-    @if (!$last) {
-      <div class="border-t border-gainsboro pt-2"></div>
-    }
+    <!-- Projects within this experience -->
+    <div class="mt-3 relative">
+      @if (exp.projects && exp.projects.length > 1) {
+      <!-- Left Arrow -->
+      <button class="nav-arrow left-2 sm:left-4 no-print" (click)="prevProject(expIndex, exp.projects.length)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      }
+
+      <!-- Project Display -->
+      <div class="px-10 md:px-16 overflow-hidden">
+        @for (proj of exp.projects; track proj.name; let pIndex = $index) {
+        @if (getActiveIndex(expIndex) === pIndex) {
+        <div class="carousel-fade">
+          <!-- Project title (only if not empty) -->
+          @if (proj.name) {
+          <div class="mb-3">
+            <p class="font-bold">
+              Project: <span class="text-lilac">{{ proj.name }}</span>
+            </p>
+            @if (proj.teamSize) {
+            <p class="font-semibold text-sm uppercase tracking-wide text-text-primary/80 mt-1">
+              Team size: <span class="text-text-primary/90 normal-case font-normal">{{ proj.teamSize }}</span>
+            </p>
+            }
+          </div>
+          }
+
+          <!-- Narrative description -->
+          @if (proj.description && proj.description.length > 0) {
+          <p class="font-semibold mt-3 text-sm uppercase tracking-wide text-text-primary/80">Description:</p>
+          <ul class="description-list mt-1">
+            @for (desc of proj.description; track desc) {
+            <li class="text-sm text-text-primary/90">{{ desc }}</li>
+            }
+          </ul>
+          }
+
+          <!-- Bullet points -->
+          <p class="font-semibold mt-4 text-sm uppercase tracking-wide text-text-primary/80">Repository:</p>
+          <ul class="repository-list mt-1">
+            @for (bullet of proj.bullets; track bullet) {
+            <li class="text-sm text-text-primary/80" [innerHTML]="highlightKeyword(bullet)"></li>
+            }
+          </ul>
+        </div>
+        }
+        }
+      </div>
+
+      @if (exp.projects && exp.projects.length > 1) {
+      <!-- Right Arrow -->
+      <button class="nav-arrow right-2 sm:right-4 no-print" (click)="nextProject(expIndex, exp.projects.length)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+
+      <!-- Dots Navigation -->
+      <div class="flex justify-center items-center gap-2 mt-4 no-print">
+        @for (proj of exp.projects; track proj.name; let pIndex = $index) {
+        <button class="w-2.5 h-2.5 rounded-full transition-all duration-300 border-2"
+          [class.bg-lilac]="getActiveIndex(expIndex) === pIndex"
+          [class.border-lilac]="getActiveIndex(expIndex) === pIndex"
+          [class.bg-transparent]="getActiveIndex(expIndex) !== pIndex"
+          [class.border-gray-300]="getActiveIndex(expIndex) !== pIndex"
+          (click)="setProjectIndex(expIndex, pIndex)">
+        </button>
+        }
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- Divider between companies (not after last) -->
+  @if (!$last) {
+  <div class="border-t border-gainsboro pt-2"></div>
+  }
   }
 </div>

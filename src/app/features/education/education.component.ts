@@ -1,9 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { EducationNode } from '../../models/resume.model';
-
+import { Observable } from 'rxjs';
 /**
  * Renders the Education section.
+ * Data is loaded directly from i18n JSON via TranslateService.
  */
 @Component({
   selector: 'app-education',
@@ -16,7 +19,7 @@ import { EducationNode } from '../../models/resume.model';
       </h3>
     </div>
     <div class="space-y-4">
-      @for (edu of data; track edu.institution) {
+      @for (edu of education(); track edu.institution) {
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
           <div>
             <h4 class="font-bold text-text-primary">{{ edu.institution }}</h4>
@@ -32,5 +35,10 @@ import { EducationNode } from '../../models/resume.model';
   `
 })
 export class EducationComponent {
-  @Input({ required: true }) data!: EducationNode[];
+  private readonly translate = inject(TranslateService);
+
+  education = toSignal(
+    this.translate.stream('resume.education') as Observable<EducationNode[]>,
+    { initialValue: [] as EducationNode[] }
+  );
 }

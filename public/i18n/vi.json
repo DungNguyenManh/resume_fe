@@ -1,74 +1,195 @@
 {
-  "header": {
-    "title": "NGUYỄN HOÀNG DƯƠNG // CV",
-    "print": "Tải / In CV PDF"
-  },
-  "profile": {
-    "title": "Kỹ sư phần mềm cấp cao",
-    "sector": "NEO_HANOI // SECTOR_4",
-    "bio": "Hơn 10 năm kinh nghiệm phát triển Angular, tối ưu hóa client-side, thiết kế kiến trúc hệ thống thời gian thực với hiệu suất tuyệt đối. Chuyên gia kết nối UI/UX nâng cao và các hệ thống bảo mật cổng thông tin."
-  },
-  "skills": {
-    "title": "01 // KỸ NĂNG",
-    "categories": {
-      "FRONTEND_ENGINE": "Frontend Engine",
-      "BACKEND_CORE": "Backend Core",
-      "SYSTEMS_OPS": "Hệ thống & Vận hành"
-    }
-  },
-  "experience": {
-    "title": "02 // KINH NGHIỆM",
-    "items": [
+  "resume": {
+    "profile": {
+      "myResume": "My Resume",
+      "name": "Nguyen Manh Dung",
+      "title": "Backend Software Engineer",
+      "location": "Tan Phu, Ho Chi Minh City",
+      "email": "dungnm11123@gmail.com",
+      "phone": "+84 090-369-8954",
+      "linkedin": "dungnm-software-engineer",
+      "careerObjective": "Là một Kỹ sư Phần mềm có định hướng rõ ràng, tôi đặt mục tiêu trở thành Senior trong thời gian tới và tiến tới vai trò Technical Lead trong vòng 3 năm. Tôi mong muốn vận dụng thế mạnh phân tích hệ thống backend để đảm bảo sự ổn định của hệ thống, đồng thời tích lũy kinh nghiệm thực tế trong việc phối hợp đội nhóm và làm việc với con người, nhằm mang lại các giải pháp phần mềm toàn diện và đáng tin cậy.",
+      "summary": "Tôi là một kỹ sư phần mềm, công việc chính của tôi là xây dựng và duy trì phần \"hậu trường\" của ứng dụng — phần mà người dùng không bao giờ nhìn thấy, nhưng lại là phần quyết định ứng dụng chạy mượt mà, bị chậm, hay gặp lỗi khi có nhiều người sử dụng cùng lúc.\n\nTôi thích những công việc đòi hỏi phải suy nghĩ kỹ trước khi hành động, chứ không chỉ đơn thuần làm cho xong nhanh. Tôi luôn cố gắng hiểu rõ vấn đề trước khi đề xuất giải pháp, và cân nhắc nhiều hướng tiếp cận khác nhau trước khi chọn ra phương án tốt nhất, thay vì làm theo thói quen hoặc chọn cách nhanh nhất.\n\nVí dụ, khi hàng nghìn người cùng quay gacha hoặc nhận thưởng vào cùng một thời điểm, nếu hệ thống xử lý kém sẽ khiến người dùng nhận thưởng nhiều lần hoặc làm dữ liệu bị sai lệch. Công việc của tôi là đảm bảo điều đó không bao giờ xảy ra, dù có bao nhiêu người thao tác cùng lúc.\n\nTôi cũng phân tích kỹ các phương án triển khai và hosting để tìm ra giải pháp tiết kiệm chi phí nhất cho công ty mà vẫn đảm bảo hệ thống ổn định, thay vì chọn những giải pháp đắt đỏ hoặc phức tạp không cần thiết.\n\nTôi có nhiều năm kinh nghiệm thực chiến trên các dự án thực tế, từ ứng dụng mạng xã hội đến ứng dụng sức khỏe và thể hình, và tôi luôn không ngừng học hỏi để hoàn thiện bản thân mỗi ngày."
+    },
+    "techSkills": [
       {
-        "role": "Tech Lead / Kiến trúc sư Front-End",
-        "details": [
-          "Thiết kế kiến trúc Angular thế hệ mới cho hệ thống biểu đồ tài chính thời gian thực.",
-          "Tối ưu hóa thời gian tải trang (LCP) tăng 40%, giảm bundle size xuống 30%.",
-          "Huấn luyện đội ngũ phát triển, xây dựng design system dựa trên Tailwind CSS v4."
+        "label": "Ngôn ngữ & Framework",
+        "values": "TypeScript, JavaScript, NestJS, NodeJS"
+      },
+      {
+        "label": "API & Cơ sở dữ liệu",
+        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
+      },
+      {
+        "label": "Hàng đợi & Cloud",
+        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
+      },
+      {
+        "label": "DevOps & Kiểm thử",
+        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
+      },
+      {
+        "label": "Kiến trúc & Công cụ",
+        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Backend",
+        "items": [
+          {
+            "name": "NestJS",
+            "level": 90
+          },
+          {
+            "name": "Node.js",
+            "level": 88
+          },
+          {
+            "name": "TypeScript",
+            "level": 88
+          },
+          {
+            "name": "REST APIs",
+            "level": 90
+          },
+          {
+            "name": "GraphQL",
+            "level": 78
+          },
+          {
+            "name": "gRPC",
+            "level": 72
+          }
         ]
       },
       {
-        "role": "Kỹ sư Angular cấp cao",
-        "details": [
-          "Phát triển ứng dụng Web điều khiển thiết bị IoT thông qua Canvas 2D/3D.",
-          "Xây dựng các Angular custom elements tái sử dụng trong các hệ thống micro-frontend.",
-          "Tối ưu hóa các tiến trình xử lý RxJS luồng dữ liệu phức tạp."
+        "category": "Dữ liệu & Message Queue",
+        "items": [
+          {
+            "name": "MongoDB",
+            "level": 82
+          },
+          {
+            "name": "Redis",
+            "level": 85
+          },
+          {
+            "name": "RabbitMQ",
+            "level": 80
+          },
+          {
+            "name": "BullMQ",
+            "level": 78
+          },
+          {
+            "name": "MariaDB",
+            "level": 74
+          },
+          {
+            "name": "Neo4j",
+            "level": 65
+          }
         ]
       },
       {
-        "role": "Lập trình viên Full-Stack",
-        "details": [
-          "Xây dựng trang Dashboard quản trị cho dữ liệu lớn (Big Data).",
-          "Phát triển và bảo trì APIs viết bằng Express, cơ sở dữ liệu PostgreSQL.",
-          "Thiết kế giải pháp phân trang và caching dữ liệu ở client."
+        "category": "Cloud & Vận hành",
+        "items": [
+          {
+            "name": "AWS (EC2, S3, CF)",
+            "level": 75
+          },
+          {
+            "name": "Docker",
+            "level": 78
+          },
+          {
+            "name": "Nginx",
+            "level": 70
+          },
+          {
+            "name": "New Relic",
+            "level": 72
+          },
+          {
+            "name": "CI/CD (Bitbucket)",
+            "level": 75
+          },
+          {
+            "name": "Jest",
+            "level": 70
+          }
         ]
       }
-    ]
-  },
-  "projects": {
-    "title": "03 // DỰ ÁN",
-    "items": [
+    ],
+    "experiences": [
       {
-        "name": "DECK_OVERLORD",
-        "description": "Trình cấu hình Dashboard phong cách HUD Cyberpunk cho phép thiết lập biểu đồ thời gian thực dạng mô đun."
+        "company": "MetaGRIT Co., Ltd.",
+        "companyLocation": "Metro Tower, TPHCM",
+        "role": "Backend Software Engineer",
+        "period": "Sep 2024 – Jun 2026",
+        "projects": [
+          {
+            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
+            "teamSize": "8 thành viên (1 Project Manager, 1 Tester, 2 Backend - CMS, 4 Mobile - WebApp)",
+            "description": [
+              "Pachinavi: Một ứng dụng gacha quy mô lớn với tính năng quét AR, quay nhận thưởng, thông báo chiến dịch (campaign) và thông báo hệ thống.",
+              "Pachinator: Một phân hệ trong Pachinavi — mạng xã hội với tính năng nhắn tin, thông báo tin nhắn, thông báo hệ thống và các tương tác bài đăng như follow, like, share, repost, quote và save.",
+              "Coupon: Nền tảng web nơi người dùng lưu lại các mã giảm giá/voucher đồ ăn để sử dụng tại các cửa hàng đối tác, trong khi các shop có thể tự đăng các phiếu giảm giá của mình."
+            ],
+            "bullets": [
+              "Newsfeed Ranking: Nghiên cứu và thiết kế pipeline xếp hạng newsfeed 2 giai đoạn, kết hợp chấm điểm dựa trên tín hiệu ngầm (implicit feedback) và time-decay cùng cơ chế cập nhật trending theo cron job, giúp tăng độ liên quan của nội dung cho luồng \"For You\" cá nhân hóa.",
+              "Hybrid Fan-out & Graph DB: Triển khai chiến lược Hybrid Fan-out (Push/Pull) cho các tài khoản có lượng follower lớn, giảm thời gian phản hồi API newsfeed từ hơn 1s xuống dưới 200ms; thay thế các truy vấn SQL join nhiều bảng bằng graph traversal native trên Neo4j cho các truy vấn quan hệ phức tạp.",
+              "CQRS & Architecture: Đề xuất và triển khai kiến trúc CQRS với CommandBus của NestJS (mẫu thiết kế Mediator), tách biệt business logic khỏi controller và đóng gói từng use case vào một command handler riêng, giúp hệ thống dễ mở rộng và bảo trì.",
+              "Concurrency & Distributed Locks: Ngăn chặn tình trạng nhận thưởng trùng lặp và sai lệch dữ liệu trong các sự kiện gacha có lượng truy cập đồng thời cao, bằng cách xử lý request bất đồng bộ với BullMQ và tuần tự hóa các lượt nhận thưởng qua Redis Distributed Locks (Redlock), đảm bảo không mất dữ liệu ngay cả khi lưu lượng tăng đột biến.",
+              "Microservices Migration: Đề xuất và triển khai việc chuyển đổi hệ thống monolithic sang các microservices độc lập (Chat, Coupon, System) nhằm loại bỏ việc phải rebuild/deploy toàn bộ hệ thống (~20 phút); thiết lập giao tiếp gRPC giữa các service và triển khai trên AWS EC2.",
+              "RabbitMQ Batching: Ngăn chặn hiện tượng thundering-herd khi phát hơn 20.000 thông báo cùng lúc, bằng cách gộp các RabbitMQ consumer thành từng nhóm 500, giữ cho mức sử dụng CPU ở tầng downstream luôn ổn định dưới 40%.",
+              "Maintenance: Chủ động refactor và bảo trì các API endpoint dựa trên các phân tích thu được từ New Relic APM.",
+              "Testing & CI/CD: Duy trì độ phủ test Jest trên 90% cho các module nghiệp vụ quan trọng; triển khai release lên production qua pipeline CI/CD của Bitbucket, theo dõi container Docker và log ở môi trường staging theo quy trình Agile/Scrum.",
+              "Mentorship & Onboarding: Hướng dẫn 2 thực tập sinh thông qua các buổi code review về best practices của NestJS, giúp họ nhanh chóng làm quen với codebase và nâng cao chất lượng code."
+            ]
+          },
+          {
+            "name": "Enik (Nền tảng Sức khỏe & Thể hình Đa nền tảng)",
+            "teamSize": "2 thành viên (1 Backend - CMS, 1 Mobile - WebApp)",
+            "description": [
+              "Ứng dụng theo dõi hoạt động tập luyện, nhịp tim và lượng calo, đi kèm nền tảng web để đăng ký gói tập và xem các chiến dịch (campaign)."
+            ],
+            "bullets": [
+              "Adapter Pattern & Caching: Thiết kế và triển khai mẫu Adapter Pattern sau khi đánh giá các phương án tích hợp SDK trực tiếp và wrapper-service, giúp cô lập core service khỏi các thay đổi SDK của nhà cung cấp storage; xây dựng pipeline caching dựa trên Redis Proxy đặt trước core service, giảm 80% lượt truy vấn trực tiếp vào database và giảm độ trễ trong giờ cao điểm.",
+              "GraphQL Optimization: Giảm tải mạng phía frontend bằng cách gộp 4-5 lệnh gọi REST API thành một truy vấn GraphQL duy nhất cho các chỉ số dashboard, trạng thái thông báo và các tài nguyên liên quan — loại bỏ các round-trip dư thừa khi tải trang.",
+              "Real-time Socket.io: Thay thế cơ chế polling bằng Socket.io để đẩy cập nhật thời gian thực cho tiến trình tập luyện, nhịp tim, lượng calo, số bước chân và badge thông báo trong ứng dụng.",
+              "AWS S3 & CloudFront: Giảm độ trễ khởi động video tập luyện từ ~800ms xuống dưới 150ms bằng cách thiết lập pipeline phân phối video trên Amazon S3 và CloudFront CDN.",
+              "A/B Testing: Xây dựng pipeline A/B testing để đánh giá các thử nghiệm UI/UX dựa trên dữ liệu sử dụng thực tế, giúp đưa ra quyết định release dựa trên dữ liệu và cải thiện tỷ lệ hoàn thành onboarding lên 15%."
+            ]
+          }
+        ]
       },
       {
-        "name": "LIGHTSPEED_COMPILER",
-        "description": "Hệ thống biên dịch các component động cho phép tải trực tiếp các khối giao diện từ xa (micro-frontends)."
-      },
+        "company": "VNPT IT",
+        "companyLocation": "Information Technology Center – VNPT, TPHCM",
+        "role": "Intern Backend Developer",
+        "period": "Mar 2024 – Aug 2024",
+        "projects": [
+          {
+            "name": "",
+            "teamSize": "",
+            "bullets": [
+              "Assisted in API Development: Xây dựng các module REST API cho các tính năng nội bộ bằng NestJS và TypeScript, tuân theo các mẫu thiết kế Repository và Template Method sẵn có của dự án để đảm bảo tính nhất quán trong logic CRUD và giảm code lặp lại.",
+              "Applied Auth & Security Check: Sử dụng NestJS Guards và JWT template có sẵn để triển khai kiểm soát truy cập theo vai trò (RBAC) cho các endpoint quản trị nội bộ được giao.",
+              "Adhered to Gitflow: Tuân thủ nghiêm ngặt chiến lược phân nhánh Gitflow và tích cực tham gia review code cùng đồng nghiệp để duy trì chất lượng code và sự lành mạnh của repository."
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
       {
-        "name": "NEON_GATEWAY",
-        "description": "Cổng giao tiếp WebSocket phân tán hỗ trợ đồng bộ hóa thông tin thời gian thực giữa 10k+ client."
+        "institution": "Đại học Quốc tế Hồng Bàng",
+        "location": "Binh Thanh, TPHCM",
+        "degree": "Cử nhân Kỹ thuật Phần mềm",
+        "period": "Oct 2021 – Dec 2024"
       }
     ]
-  },
-  "contact": {
-    "title": "04 // LIÊN HỆ",
-    "form": {
-      "name": "TÊN / BÍ DANH",
-      "email": "EMAIL BẢO MẬT",
-      "message": "TIN NHẮN MÃ HÓA",
-      "submit": "GỬI DỮ LIỆU"
-    }
   }
 }

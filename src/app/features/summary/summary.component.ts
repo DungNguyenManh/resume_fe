@@ -1,8 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 /**
  * Renders the Summary block with multiple paragraphs.
+ * Data is loaded directly from i18n JSON via TranslateService.
  */
 @Component({
   selector: 'app-summary',
@@ -15,16 +18,23 @@ import { CommonModule } from '@angular/common';
       </h3>
     </div>
     <div class="space-y-3">
-      @for (para of paragraphs; track para) {
+      @for (para of paragraphs(); track para) {
         <p class="text-sm leading-relaxed text-text-primary/85">{{ para }}</p>
       }
     </div>
   `
 })
 export class SummaryComponent {
-  @Input({ required: true }) rawText!: string;
+  private readonly translate = inject(TranslateService);
 
-  get paragraphs(): string[] {
-    return this.rawText.split('\n\n').map(p => p.trim()).filter(p => p.length > 0);
+  private readonly rawText = toSignal(
+    this.translate.stream('resume.profile.summary') as any,
+    { initialValue: this.translate.instant('resume.profile.summary') as string }
+  );
+
+  paragraphs(): string[] {
+    const raw = this.rawText();
+    if (!raw || typeof raw !== 'string') return [];
+    return raw.split('\n\n').map((p: string) => p.trim()).filter((p: string) => p.length > 0);
   }
 }
