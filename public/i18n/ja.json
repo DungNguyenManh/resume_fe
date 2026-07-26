@@ -1,4 +1,8 @@
 {
+  "labels": {
+    "careerObjective": "キャリア目標",
+    "summary": "概要"
+  },
   "resume": {
     "profile": {
       "myResume": "私の履歴書",
@@ -11,28 +15,6 @@
       "careerObjective": "今後3年以内にシニアバックエンドエンジニア、あるいはテクニカルリードへのキャリアアップを目指しています。大規模分散システムのアーキテクチャ設計と技術的な意思決定においてオーナーシップを持ち、責任を担っていきたいと考えています。エンジニアとしての当事者意識、チーム間の連携、継続的な学習を大切にする環境で、これまで培ったバックエンドの専門知識を活かし、信頼性が高くスケーラブルなシステムを構築するとともに、チームメンバーの育成にも貢献したいです。",
       "summary": "Node.js/TypeScript (NestJS) および AWS を用いた高並行性マイクロサービスを専門とするバックエンドエンジニアとして2年以上の経験があります。ニュースフィードのランキング設計、分散ロック、サービス移行など、コアシステムアーキテクチャの設計を担当し、ピーク時2,000リクエスト/秒、ユーザー数2万人以上の本番環境を支えてきました。トラフィック急増時にもレイテンシを大幅に削減（最大80%改善）した実績があります。システム設計、並行処理制御、サービス間通信（gRPC、RabbitMQ、GraphQL）に強みを持っています。"
     },
-    "techSkills": [
-      {
-        "label": "言語・フレームワーク",
-        "values": "TypeScript, JavaScript, NestJS, NodeJS"
-      },
-      {
-        "label": "API・データベース",
-        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
-      },
-      {
-        "label": "キュー・クラウド",
-        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
-      },
-      {
-        "label": "DevOps・QA",
-        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
-      },
-      {
-        "label": "アーキテクチャ・ツール",
-        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
-      }
-    ],
     "skills": [
       {
         "category": "バックエンド",
@@ -120,75 +102,6 @@
             "level": 70
           }
         ]
-      }
-    ],
-    "experiences": [
-      {
-        "company": "MetaGRIT Co., Ltd.",
-        "companyLocation": "Metro Tower, TPHCM",
-        "role": "バックエンドソフトウェアエンジニア",
-        "period": "Sep 2024 – Jun 2026",
-        "projects": [
-          {
-            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
-            "teamSize": "8名（PM 1名、テスター 1名、バックエンド/CMS 2名、モバイル/Web 4名）",
-            "description": [
-              "Pachinavi：ARスキャン、スピンで報酬獲得、キャンペーン通知、システム通知を備えた大規模ガチャアプリ。",
-              "Pachinator：Pachinavi内のサブモジュールで、メッセージング、メッセージ通知、システム通知、フォロー・いいね・シェア・リポスト・引用・保存などの投稿インタラクションを備えたソーシャルネットワーク機能。",
-              "Coupon：ユーザーが提携店舗で利用できる飲食割引コード/クーポンを保存できるWebプラットフォームで、店舗側も独自の割引クーポンを掲載可能。"
-            ],
-            "bullets": [
-              "Newsfeed Ranking：暗黙的フィードバックスコアリングとtime-decayを組み合わせ、cronベースのトレンド更新を伴う2段階のニュースフィード・ランキングパイプラインを調査・設計し、パーソナライズされた「おすすめ」フィードのコンテンツ関連性を向上。",
-              "Hybrid Fan-out & Graph DB：フォロワー数の多いアカウント向けにHybrid Fan-out（Push/Pull）戦略を実装し、ニュースフィードAPIの応答時間を1秒超から200ミリ秒未満に短縮。複数テーブルのSQL joinをNeo4jによるネイティブなグラフトラバーサルに置き換え、深い関係性クエリに対応。",
-              "CQRS & Architecture：NestJSのCommandBus（Mediatorパターン）を用いたCQRSアーキテクチャを提案・実装し、ビジネスロジックをコントローラーから分離。各ユースケースを専用のコマンドハンドラーにカプセル化し、拡張性と保守性を向上。",
-              "Concurrency & Distributed Locks：高同時アクセスのガチャイベント中にBullMQによる非同期リクエスト処理と、Redis分散ロック（Redlock）による報酬取得のシリアライズを実装し、報酬の重複付与やデータ破損を防止。トラフィック急増時もデータ損失ゼロを維持。",
-              "Microservices Migration：モノリシックシステムを独立したマイクロサービス（Chat、Coupon、System）へ移行することを提案・実装し、システム全体のリビルド/デプロイ（約20分）を不要に。サービス間通信にgRPCを設定し、AWS EC2上にデプロイ。",
-              "RabbitMQ Batching：20,000件以上の通知配信時に発生するサンダリングハード障害を防止するため、RabbitMQコンシューマーを500件単位でバッチ化し、下流のCPU使用率を常時40%未満に安定化。",
-              "Maintenance：New Relic APMから得られた知見をもとに、APIエンドポイントを継続的にリファクタリング・保守。",
-              "Testing & CI/CD：ビジネスクリティカルなモジュールに対してJestテストカバレッジ90%以上を維持。BitbucketのCI/CDパイプラインを通じて本番リリースを実施し、Agile/Scrumのもとステージング環境でDockerコンテナとログを監視。",
-              "Mentorship & Onboarding：インターン2名に対しNestJSのベストプラクティスに関するコードレビューを通じてメンタリングを実施し、コードベースへの早期適応とコード品質向上を支援。"
-            ]
-          },
-          {
-            "name": "Enik（クロスプラットフォーム・ヘルス&フィットネスプラットフォーム）",
-            "teamSize": "2名（バックエンド/CMS 1名、モバイル/Web 1名）",
-            "description": [
-              "ワークアウトの活動量、心拍数、カロリーをモニタリングするアプリと、トレーニングパッケージの申し込みやキャンペーン閲覧が可能なWebプラットフォームで構成。"
-            ],
-            "bullets": [
-              "Adapter Pattern & Caching：SDK直接統合とラッパーサービス方式を比較検討したうえでAdapterパターンを設計・実装し、コアサービスをストレージプロバイダーのSDK変更から分離。コアサービスの前段にRedisベースのProxyキャッシングパイプラインを構築し、直接的なデータベース読み取りをピーク時のレイテンシとともに80%削減。",
-              "GraphQL Optimization：ダッシュボードの指標、通知ステータス、関連リソース取得のために4〜5件のREST API呼び出しを単一のGraphQLクエリに統合し、フロントエンドのネットワークオーバーヘッドを削減。ページ読み込み時の冗長なラウンドトリップを排除。",
-              "Real-time Socket.io：ポーリングをSocket.ioに置き換え、ワークアウトの進捗、心拍数、カロリー、歩数、アプリ内通知バッジをリアルタイムで更新。",
-              "AWS S3 & CloudFront：Amazon S3とCloudFront CDNを用いた動画配信パイプラインを構築し、フィットネス動画の起動遅延を約800ミリ秒から150ミリ秒未満に短縮。",
-              "A/B Testing：実際の利用データに基づいてUI/UXの実験を評価するA/Bテストパイプラインを構築し、データドリブンなリリース判断を可能にすることでオンボーディング完了率を15%改善。"
-            ]
-          }
-        ]
-      },
-      {
-        "company": "VNPT IT",
-        "companyLocation": "Information Technology Center – VNPT, TPHCM",
-        "role": "バックエンド開発インターン",
-        "period": "Mar 2024 – Aug 2024",
-        "projects": [
-          {
-            "name": "",
-            "teamSize": "",
-            "bullets": [
-              "Assisted in API Development：NestJSとTypeScriptを用いて社内機能向けのREST APIモジュールを開発。プロジェクトで確立されたRepositoryパターンおよびTemplate Methodパターンに従い、CRUDロジックの一貫性を保ちボイラープレートコードを削減。",
-              "Applied Auth & Security Check：事前設定されたNestJS GuardsとJWTテンプレートを活用し、担当する社内管理系エンドポイントに対してロールベースアクセス制御（RBAC）を実装。",
-              "Adhered to Gitflow：厳格なGitflowブランチ戦略を遵守し、リポジトリの健全性とコード品質を維持するためピアコードレビューに積極的に参加。"
-            ]
-          }
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Hong Bang International University",
-        "location": "Binh Thanh, TPHCM",
-        "degree": "ソフトウェア工学 学士",
-        "period": "Oct 2021 – Dec 2024"
       }
     ]
   }

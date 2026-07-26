@@ -1,4 +1,8 @@
 {
+  "labels": {
+    "careerObjective": "Career Objective",
+    "summary": "Summary"
+  },
   "resume": {
     "profile": {
       "myResume": "My Resume",
@@ -11,28 +15,6 @@
       "careerObjective": "Aiming to grow into a Senior Backend Engineer / Technical Lead within the next 3 years, taking ownership of system architecture and driving technical decisions for high-scale, distributed platforms. Seeking an environment that values engineering ownership, cross-team collaboration, and continuous learning — where I can apply deep backend expertise to build reliable, scalable systems while mentoring and growing alongside the team.",
       "summary": "Backend Software Engineer with 2+ years of experience specializing in high-concurrency systems using Node.js/TypeScript (NestJS) and AWS. Skilled in designing core system architecture — including newsfeed ranking, distributed locking, and service migration — for production systems serving 20K+ users at 2,000 req/s peak. Proven track record of delivering up to 80% latency reduction and zero data loss under traffic surges, with strong fundamentals in system design, concurrency control, and cross-service communication (gRPC, RabbitMQ, GraphQL)."
     },
-    "techSkills": [
-      {
-        "label": "Languages & Frameworks",
-        "values": "TypeScript, JavaScript, NestJS, NodeJS"
-      },
-      {
-        "label": "APIs & Databases",
-        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
-      },
-      {
-        "label": "Queues & Clouds",
-        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
-      },
-      {
-        "label": "DevOps & QA",
-        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
-      },
-      {
-        "label": "Architecture & Tools",
-        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
-      }
-    ],
     "skills": [
       {
         "category": "Backend",
@@ -120,75 +102,6 @@
             "level": 70
           }
         ]
-      }
-    ],
-    "experiences": [
-      {
-        "company": "MetaGRIT Co., Ltd.",
-        "companyLocation": "Metro Tower, TPHCM",
-        "role": "Backend Software Engineer",
-        "period": "Sep 2024 – Jun 2026",
-        "projects": [
-          {
-            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
-            "teamSize": "8 members (1 Project Manager, 1 Tester, 2 Backend - CMS, 4 Mobile - WebApp)",
-            "description": [
-              "Pachinavi: A large-scale gacha app featuring AR scanning, spin-to-win reward claiming, campaign notifications, and system notifications.",
-              "Pachinator: A sub-module within Pachinavi — a social network with messaging, message notifications, system notifications, and post interactions such as follow, like, share, repost, quote, and save.",
-              "Coupon: A web platform where users save food discount codes/vouchers to redeem at partner stores, while shops publish their own discount coupons."
-            ],
-            "bullets": [
-              "Newsfeed Ranking: Researched and designed a 2-stage newsfeed ranking pipeline combining implicit feedback scoring and time-decay with cron-based trending updates, improving content relevance for personalized \"For You\" feeds.",
-              "Hybrid Fan-out & Graph DB: Implemented a Hybrid Fan-out (Push/Pull) strategy for high-follower accounts, cutting newsfeed API response time from over 1s to under 200ms; replaced multi-table SQL joins with native Neo4j graph traversal for deep relationship queries.",
-              "CQRS & Architecture: Proposed and implemented a CQRS architecture with NestJS's CommandBus (Mediator pattern), decoupling business logic from controllers and encapsulating each use case into a dedicated command handler for extensibility and maintainability.",
-              "Concurrency & Distributed Locks: Prevented duplicate rewards and data corruption during high-concurrency gacha events by processing requests asynchronously with BullMQ and serializing claims via Redis Distributed Locks (Redlock), maintaining zero data-loss under traffic surges.",
-              "Microservices Migration: Proposed and implemented the migration of a monolithic system into standalone microservices (Chat, Coupon, System) to eliminate full-system rebuild/deploy (~20 min); set up gRPC communication between services and deployed on AWS EC2.",
-              "RabbitMQ Batching: Prevented thundering-herd failures during 20,000+ notification broadcasts by batching RabbitMQ consumers into groups of 500, keeping downstream CPU utilization stable under 40%.",
-              "Maintenance: Proactively refactored and maintained API endpoints based on insights from New Relic APM.",
-              "Testing & CI/CD: Maintained 90%+ Jest test coverage for business-critical modules; delivered production releases via Bitbucket CI/CD pipelines, monitoring Docker containers and logs in staging under Agile/Scrum.",
-              "Mentorship & Onboarding: Mentored 2 interns through code reviews on NestJS best practices, helping them ramp up on the codebase and improve code quality."
-            ]
-          },
-          {
-            "name": "Enik (Cross-Platform Health & Fitness Platform)",
-            "teamSize": "2 members (1 Backend - CMS, 1 Mobile - WebApp)",
-            "description": [
-              "An app for monitoring workout activity, heart rate, and calories, paired with a web platform for subscribing to training packages and viewing campaigns."
-            ],
-            "bullets": [
-              "Adapter Pattern & Caching: Designed and implemented an Adapter Pattern after evaluating direct-SDK-integration and wrapper-service alternatives, isolating core services from storage-provider SDK changes; built a Redis-based Proxy caching pipeline in front of core services, reducing direct database reads by 80% and latency during peak traffic.",
-              "GraphQL Optimization: Reduced frontend network overhead by consolidating 4–5 REST API calls into a single GraphQL query for dashboard metrics, notification status, and related resources — eliminating redundant round-trips on page load.",
-              "Real-time Socket.io: Replaced polling with Socket.io to push real-time updates for workout progress, heart rate, calories, step count, and in-app notification badges.",
-              "AWS S3 & CloudFront: Reduced fitness video startup latency from ~800ms to under 150ms by setting up a video delivery pipeline on Amazon S3 and CloudFront CDN.",
-              "A/B Testing: Built an A/B testing pipeline to evaluate UI/UX experiments against real usage data, enabling data-driven release decisions that improved onboarding completion rate by 15%."
-            ]
-          }
-        ]
-      },
-      {
-        "company": "VNPT IT",
-        "companyLocation": "Information Technology Center – VNPT, TPHCM",
-        "role": "Intern Backend Developer",
-        "period": "Mar 2024 – Aug 2024",
-        "projects": [
-          {
-            "name": "",
-            "teamSize": "",
-            "bullets": [
-              "Assisted in API Development: Built REST API modules for internal features using NestJS and TypeScript, following the project's established Repository and Template Method patterns to keep CRUD logic consistent and reduce boilerplate code.",
-              "Applied Auth & Security Check: Utilized pre-configured NestJS Guards and JWT templates to implement Role-Based Access Control (RBAC) for assigned internal administration endpoints.",
-              "Adhered to Gitflow: Followed strict Gitflow branching strategies and actively participated in peer code reviews to maintain repository health and code quality."
-            ]
-          }
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Hong Bang International University",
-        "location": "Binh Thanh, TPHCM",
-        "degree": "Bachelor of Software Engineering",
-        "period": "Oct 2021 – Dec 2024"
       }
     ]
   }

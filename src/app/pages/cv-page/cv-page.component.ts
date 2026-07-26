@@ -6,11 +6,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 
 import { ProfileComponent } from '../../features/profile/profile.component';
-import { CareerObjectiveComponent } from '../../features/career-objective/career-objective.component';
-import { SummaryComponent } from '../../features/summary/summary.component';
-import { ExperienceComponent } from '../../features/experience/experience.component';
-import { TechSkillsComponent } from '../../features/tech-skills/tech-skills.component';
-import { EducationComponent } from '../../features/education/education.component';
 import { StorageService } from '../../core/storage.service';
 import { BackgroundMusicService } from '../../core/services/background-music.service';
 import { YoutubeAudioPlayerComponent } from '../../shared/components/youtube-audio-player/youtube-audio-player.component';
@@ -22,11 +17,6 @@ import { YoutubeAudioPlayerComponent } from '../../shared/components/youtube-aud
         CommonModule,
         TranslatePipe,
         ProfileComponent,
-        CareerObjectiveComponent,
-        SummaryComponent,
-        ExperienceComponent,
-        TechSkillsComponent,
-        EducationComponent,
         YoutubeAudioPlayerComponent
     ],
     templateUrl: './cv-page.component.html',

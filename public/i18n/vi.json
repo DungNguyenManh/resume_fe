@@ -1,4 +1,8 @@
 {
+  "labels": {
+    "careerObjective": "Mục tiêu nghề nghiệp",
+    "summary": "Tóm tắt"
+  },
   "resume": {
     "profile": {
       "myResume": "My Resume",
@@ -11,28 +15,6 @@
       "careerObjective": "Định hướng phát triển lên vai trò Senior Backend Engineer / Technical Lead trong 3 năm tới, chủ động trong thiết kế kiến trúc hệ thống và ra quyết định kỹ thuật cho các nền tảng quy mô lớn, phân tán. Mong muốn làm việc trong môi trường đề cao tinh thần sở hữu công việc (ownership), hợp tác đa nhóm và học hỏi liên tục — nơi tôi có thể áp dụng chuyên môn backend để xây dựng hệ thống ổn định, có khả năng mở rộng, đồng thời hỗ trợ và phát triển cùng đội ngũ.",
       "summary": "Kỹ sư Phần mềm Backend với hơn 2 năm kinh nghiệm, chuyên về kiến trúc microservices hiệu năng cao sử dụng Node.js/TypeScript (NestJS) và AWS. Có kinh nghiệm thiết kế các thành phần cốt lõi của hệ thống như thuật toán xếp hạng newsfeed, khóa phân tán (distributed locking) và di chuyển dịch vụ (service migration) — phục vụ hệ thống thực tế với hơn 20.000 người dùng và đạt đỉnh 2.000 yêu cầu/giây (req/s). Từng tối ưu giảm đến 80% độ trễ (latency) và đảm bảo không mất mát dữ liệu (zero data loss) khi lưu lượng truy cập tăng đột biến. Sở hữu nền tảng vững chắc về thiết kế hệ thống (system design), xử lý song hành (concurrency) và giao tiếp liên dịch vụ (gRPC, RabbitMQ, GraphQL)."
     },
-    "techSkills": [
-      {
-        "label": "Ngôn ngữ & Framework",
-        "values": "TypeScript, JavaScript, NestJS, NodeJS"
-      },
-      {
-        "label": "API & Cơ sở dữ liệu",
-        "values": "REST, GraphQL, gRPC, Socket.io, Firebase FCM, MongoDB, Redis, MariaDB, Neo4j"
-      },
-      {
-        "label": "Hàng đợi & Cloud",
-        "values": "RabbitMQ, BullMQ, AWS (EC2, S3, CloudFront, IAM, Route53)"
-      },
-      {
-        "label": "DevOps & Kiểm thử",
-        "values": "Docker, Nginx, Container Monitoring, Log Analysis, New Relic, Jest"
-      },
-      {
-        "label": "Kiến trúc & Công cụ",
-        "values": "Microservices, CQRS, Design Patterns, Git, Bitbucket, Jira, Slack, Agile / Scrum"
-      }
-    ],
     "skills": [
       {
         "category": "Backend",
@@ -120,75 +102,6 @@
             "level": 70
           }
         ]
-      }
-    ],
-    "experiences": [
-      {
-        "company": "MetaGRIT Co., Ltd.",
-        "companyLocation": "Metro Tower, TPHCM",
-        "role": "Backend Software Engineer",
-        "period": "Sep 2024 – Jun 2026",
-        "projects": [
-          {
-            "name": "Ecosystem (Pachinavi, Pachinator, Coupon)",
-            "teamSize": "8 thành viên (1 Project Manager, 1 Tester, 2 Backend - CMS, 4 Mobile - WebApp)",
-            "description": [
-              "Pachinavi: Một ứng dụng gacha quy mô lớn với tính năng quét AR, quay nhận thưởng, thông báo chiến dịch (campaign) và thông báo hệ thống.",
-              "Pachinator: Một phân hệ trong Pachinavi — mạng xã hội với tính năng nhắn tin, thông báo tin nhắn, thông báo hệ thống và các tương tác bài đăng như follow, like, share, repost, quote và save.",
-              "Coupon: Nền tảng web nơi người dùng lưu lại các mã giảm giá/voucher đồ ăn để sử dụng tại các cửa hàng đối tác, trong khi các shop có thể tự đăng các phiếu giảm giá của mình."
-            ],
-            "bullets": [
-              "Newsfeed Ranking: Nghiên cứu và thiết kế pipeline xếp hạng newsfeed 2 giai đoạn, kết hợp chấm điểm dựa trên tín hiệu ngầm (implicit feedback) và time-decay cùng cơ chế cập nhật trending theo cron job, giúp tăng độ liên quan của nội dung cho luồng \"For You\" cá nhân hóa.",
-              "Hybrid Fan-out & Graph DB: Triển khai chiến lược Hybrid Fan-out (Push/Pull) cho các tài khoản có lượng follower lớn, giảm thời gian phản hồi API newsfeed từ hơn 1s xuống dưới 200ms; thay thế các truy vấn SQL join nhiều bảng bằng graph traversal native trên Neo4j cho các truy vấn quan hệ phức tạp.",
-              "CQRS & Architecture: Đề xuất và triển khai kiến trúc CQRS với CommandBus của NestJS (mẫu thiết kế Mediator), tách biệt business logic khỏi controller và đóng gói từng use case vào một command handler riêng, giúp hệ thống dễ mở rộng và bảo trì.",
-              "Concurrency & Distributed Locks: Ngăn chặn tình trạng nhận thưởng trùng lặp và sai lệch dữ liệu trong các sự kiện gacha có lượng truy cập đồng thời cao, bằng cách xử lý request bất đồng bộ với BullMQ và tuần tự hóa các lượt nhận thưởng qua Redis Distributed Locks (Redlock), đảm bảo không mất dữ liệu ngay cả khi lưu lượng tăng đột biến.",
-              "Microservices Migration: Đề xuất và triển khai việc chuyển đổi hệ thống monolithic sang các microservices độc lập (Chat, Coupon, System) nhằm loại bỏ việc phải rebuild/deploy toàn bộ hệ thống (~20 phút); thiết lập giao tiếp gRPC giữa các service và triển khai trên AWS EC2.",
-              "RabbitMQ Batching: Ngăn chặn hiện tượng thundering-herd khi phát hơn 20.000 thông báo cùng lúc, bằng cách gộp các RabbitMQ consumer thành từng nhóm 500, giữ cho mức sử dụng CPU ở tầng downstream luôn ổn định dưới 40%.",
-              "Maintenance: Chủ động refactor và bảo trì các API endpoint dựa trên các phân tích thu được từ New Relic APM.",
-              "Testing & CI/CD: Duy trì độ phủ test Jest trên 90% cho các module nghiệp vụ quan trọng; triển khai release lên production qua pipeline CI/CD của Bitbucket, theo dõi container Docker và log ở môi trường staging theo quy trình Agile/Scrum.",
-              "Mentorship & Onboarding: Hướng dẫn 2 thực tập sinh thông qua các buổi code review về best practices của NestJS, giúp họ nhanh chóng làm quen với codebase và nâng cao chất lượng code."
-            ]
-          },
-          {
-            "name": "Enik (Nền tảng Sức khỏe & Thể hình Đa nền tảng)",
-            "teamSize": "2 thành viên (1 Backend - CMS, 1 Mobile - WebApp)",
-            "description": [
-              "Ứng dụng theo dõi hoạt động tập luyện, nhịp tim và lượng calo, đi kèm nền tảng web để đăng ký gói tập và xem các chiến dịch (campaign)."
-            ],
-            "bullets": [
-              "Adapter Pattern & Caching: Thiết kế và triển khai mẫu Adapter Pattern sau khi đánh giá các phương án tích hợp SDK trực tiếp và wrapper-service, giúp cô lập core service khỏi các thay đổi SDK của nhà cung cấp storage; xây dựng pipeline caching dựa trên Redis Proxy đặt trước core service, giảm 80% lượt truy vấn trực tiếp vào database và giảm độ trễ trong giờ cao điểm.",
-              "GraphQL Optimization: Giảm tải mạng phía frontend bằng cách gộp 4-5 lệnh gọi REST API thành một truy vấn GraphQL duy nhất cho các chỉ số dashboard, trạng thái thông báo và các tài nguyên liên quan — loại bỏ các round-trip dư thừa khi tải trang.",
-              "Real-time Socket.io: Thay thế cơ chế polling bằng Socket.io để đẩy cập nhật thời gian thực cho tiến trình tập luyện, nhịp tim, lượng calo, số bước chân và badge thông báo trong ứng dụng.",
-              "AWS S3 & CloudFront: Giảm độ trễ khởi động video tập luyện từ ~800ms xuống dưới 150ms bằng cách thiết lập pipeline phân phối video trên Amazon S3 và CloudFront CDN.",
-              "A/B Testing: Xây dựng pipeline A/B testing để đánh giá các thử nghiệm UI/UX dựa trên dữ liệu sử dụng thực tế, giúp đưa ra quyết định release dựa trên dữ liệu và cải thiện tỷ lệ hoàn thành onboarding lên 15%."
-            ]
-          }
-        ]
-      },
-      {
-        "company": "VNPT IT",
-        "companyLocation": "Information Technology Center – VNPT, TPHCM",
-        "role": "Intern Backend Developer",
-        "period": "Mar 2024 – Aug 2024",
-        "projects": [
-          {
-            "name": "",
-            "teamSize": "",
-            "bullets": [
-              "Assisted in API Development: Xây dựng các module REST API cho các tính năng nội bộ bằng NestJS và TypeScript, tuân theo các mẫu thiết kế Repository và Template Method sẵn có của dự án để đảm bảo tính nhất quán trong logic CRUD và giảm code lặp lại.",
-              "Applied Auth & Security Check: Sử dụng NestJS Guards và JWT template có sẵn để triển khai kiểm soát truy cập theo vai trò (RBAC) cho các endpoint quản trị nội bộ được giao.",
-              "Adhered to Gitflow: Tuân thủ nghiêm ngặt chiến lược phân nhánh Gitflow và tích cực tham gia review code cùng đồng nghiệp để duy trì chất lượng code và sự lành mạnh của repository."
-            ]
-          }
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Đại học Quốc tế Hồng Bàng",
-        "location": "Binh Thanh, TPHCM",
-        "degree": "Cử nhân Kỹ thuật Phần mềm",
-        "period": "Oct 2021 – Dec 2024"
       }
     ]
   }

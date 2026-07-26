@@ -1,103 +1,74 @@
-<!-- Background & Layout Wrapper -->
-<div class="relative min-h-screen bg-transparent w-full pb-12">
+<div class="max-w-2xl mx-auto px-6 py-12">
 
-    <!-- HEADER BAR -->
-    <header
-        class="w-full bg-[rgba(255,255,255,0.7)] backdrop-blur-md sticky top-0 z-40 px-4 py-3 shadow-sm border-b border-gainsboro">
-        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+  <!-- HEADER -->
+  <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-6">
+    <div>
+      <h1 class="font-heading font-extrabold text-2xl sm:text-3xl tracking-wide uppercase text-ink">
+        {{ 'resume.profile.name' | translate }}
+      </h1>
+      <p class="font-heading font-semibold text-base text-ink mt-1">
+        {{ 'resume.profile.title' | translate }}
+      </p>
+      <p class="text-sm text-muted mt-0.5">
+        {{ 'resume.profile.location' | translate }}
+      </p>
+    </div>
 
-            <!-- Brand Logo -->
-            <div class="flex items-center gap-3">
-                <a href="/"
-                    class="font-orbitron font-extrabold tracking-widest text-lg text-text-primary hover:text-lilac transition-colors">
-                    {{ 'resume.profile.myResume' | translate }}
-                </a>
-            </div>
+    <div class="flex items-center gap-4 text-sm font-heading shrink-0">
+      <button (click)="changeLanguage('en')"
+        [class]="currentLang() === 'en' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        EN
+      </button>
+      <button (click)="changeLanguage('vi')"
+        [class]="currentLang() === 'vi' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        VI
+      </button>
+      <button (click)="changeLanguage('ja')"
+        [class]="currentLang() === 'ja' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        JA
+      </button>
+      <button (click)="toggleSound()" [title]="audioService.isMuted() ? 'Unmute Audio' : 'Mute Audio'"
+        class="text-muted hover:text-ink">
+        @if (audioService.isMuted()) {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+        </svg>
+        } @else {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+        </svg>
+        }
+      </button>
+    </div>
+  </header>
 
-            <!-- Controls -->
-            <div class="flex items-center gap-3">
+  <div class="hairline"></div>
 
-                <!-- Language Switcher -->
-                <div class="flex gap-1 bg-ghost-white rounded-full p-1 border border-gainsboro shadow-inner">
-                    <button (click)="changeLanguage('en')"
-                        [class]="currentLang() === 'en' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                        class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
-                        EN
-                    </button>
-                    <button (click)="changeLanguage('vi')"
-                        [class]="currentLang() === 'vi' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                        class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
-                        VI
-                    </button>
-                    <button (click)="changeLanguage('ja')"
-                        [class]="currentLang() === 'ja' ? 'bg-white shadow-sm text-text-primary font-bold' : 'text-gray-500 hover:text-text-primary'"
-                        class="px-3 py-1 text-xs rounded-full transition-all cursor-pointer">
-                        JA
-                    </button>
-                </div>
+  <!-- INTRO: avatar + contact + bio -->
+  <section class="py-8">
+    <app-profile></app-profile>
+  </section>
 
-                <!-- Audio toggle -->
-                <button (click)="toggleSound()" [title]="audioService.isMuted() ? 'Unmute Audio' : 'Mute Audio'"
-                    class="liquid-button p-2 text-text-primary cursor-pointer">
-                    @if (audioService.isMuted()) {
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="w-4 h-4">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                    </svg>
-                    } @else {
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="w-4 h-4">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                    </svg>
-                    }
-                </button>
-            </div>
-        </div>
-    </header>
+  <div class="hairline"></div>
 
-    <!-- MAIN CV CONTENT -->
-    <main class="max-w-5xl mx-auto w-full px-4 mt-8 space-y-6">
+  <!-- FOOTER -->
+  <footer class="pt-10 pb-4 text-center">
+    <div class="flex justify-center gap-2 text-sm font-heading">
+      <a [href]="'https://linkedin.com/in/' + ('resume.profile.linkedin' | translate)" target="_blank"
+        rel="noopener">LinkedIn</a>
+      <span class="text-muted">|</span>
+      <a [href]="'mailto:' + ('resume.profile.email' | translate)">Email</a>
+      <span class="text-muted">|</span>
+      <span class="text-muted">{{ 'resume.profile.phone' | translate }}</span>
+    </div>
+    <p class="mt-3 text-xs text-muted">
+      &copy; 2024–2026 {{ 'resume.profile.name' | translate }}. All rights reserved.
+    </p>
+  </footer>
 
-        <!-- 1. PROFILE: Name, Title, Contact -->
-        <section id="profile" class="glass-panel p-6 md:p-8">
-            <app-profile></app-profile>
-        </section>
-
-        <!-- 2. CAREER OBJECTIVE -->
-        <section id="career-objective" class="glass-panel p-6 md:p-8">
-            <app-career-objective></app-career-objective>
-        </section>
-
-        <!-- 3. SUMMARY -->
-        <section id="summary" class="glass-panel p-6 md:p-8">
-            <app-summary></app-summary>
-        </section>
-
-        <!-- 4. EXPERIENCE -->
-        <section id="experience" class="glass-panel p-6 md:p-8">
-            <app-experience></app-experience>
-        </section>
-
-        <!-- 5. TECHNICAL SKILLS -->
-        <section id="tech-skills" class="glass-panel p-6 md:p-8">
-            <app-tech-skills></app-tech-skills>
-        </section>
-
-        <!-- 6. EDUCATION -->
-        <section id="education" class="glass-panel p-6 md:p-8">
-            <app-education></app-education>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer
-        class="max-w-5xl mx-auto w-full px-4 mt-12 pt-6 flex flex-col items-center justify-center text-sm text-gray-400 no-print">
-        <p>&copy; 2026 {{ 'resume.profile.name' | translate }}, All rights reserved.</p>
-    </footer>
-
-    <!-- YOUTUBE BACKGROUND AUDIO -->
-    <app-youtube-audio-player></app-youtube-audio-player>
+  <app-youtube-audio-player></app-youtube-audio-player>
 </div>
