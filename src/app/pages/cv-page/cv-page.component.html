@@ -1,9 +1,9 @@
-<div class="max-w-2xl mx-auto px-6 py-12">
+<div class="max-w-4xl mx-auto px-6 py-12">
 
   <!-- HEADER -->
   <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-6">
     <div>
-      <h1 class="font-heading font-extrabold text-2xl sm:text-3xl tracking-wide uppercase text-ink">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl tracking-wide uppercase text-ink">
         {{ 'resume.profile.name' | translate }}
       </h1>
       <p class="font-heading font-semibold text-base text-ink mt-1">
@@ -16,19 +16,19 @@
 
     <div class="flex items-center gap-4 text-sm font-heading shrink-0">
       <button (click)="changeLanguage('en')"
-        [class]="currentLang() === 'en' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        [class]="currentLang() === 'en' ? 'text-ink font-bold' : 'text-muted hover:text-ink'" class="cursor-pointer">
         EN
       </button>
       <button (click)="changeLanguage('vi')"
-        [class]="currentLang() === 'vi' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        [class]="currentLang() === 'vi' ? 'text-ink font-bold' : 'text-muted hover:text-ink'" class="cursor-pointer">
         VI
       </button>
       <button (click)="changeLanguage('ja')"
-        [class]="currentLang() === 'ja' ? 'text-ink font-bold' : 'text-muted hover:text-ink'">
+        [class]="currentLang() === 'ja' ? 'text-ink font-bold' : 'text-muted hover:text-ink'" class="cursor-pointer">
         JA
       </button>
       <button (click)="toggleSound()" [title]="audioService.isMuted() ? 'Unmute Audio' : 'Mute Audio'"
-        class="text-muted hover:text-ink">
+        class="text-muted hover:text-ink cursor-pointer">
         @if (audioService.isMuted()) {
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
           class="w-4 h-4">

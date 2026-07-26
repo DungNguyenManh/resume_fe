@@ -2,17 +2,18 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-ink: #1a1a1a;
-  --color-muted: #555555;
-  --color-hairline: #e2e2e2;
-  --color-link: #5b3e96;
+  --color-ink: #3a2e4d;
+  --color-muted: #6a5c88;
+  --color-hairline: #d6c6ea;
+  --color-link: #6b46c1;
 
   --font-heading: 'Inter', 'Be Vietnam Pro', sans-serif;
   --font-body: 'Merriweather', 'Be Vietnam Pro', Georgia, serif;
 }
 
-html, body {
-  background: #ffffff;
+html,
+body {
+  background: #f3edfa;
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -24,7 +25,7 @@ html, body {
 a {
   color: var(--color-link);
   text-decoration: underline;
-  text-decoration-color: rgba(91, 62, 150, 0.4);
+  text-decoration-color: rgba(107, 70, 193, 0.45);
   text-underline-offset: 2px;
 }
 
@@ -36,9 +37,11 @@ a:hover {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #f3edfa;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-hairline);
   border-radius: 4px;
@@ -49,5 +52,7 @@ a:hover {
 }
 
 @media print {
-  .no-print { display: none !important; }
+  .no-print {
+    display: none !important;
+  }
 }
