@@ -9,8 +9,7 @@ import { Observable } from 'rxjs';
   selector: 'app-profile',
   standalone: true,
   imports: [CommonModule, TranslatePipe],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  templateUrl: './profile.component.html'
 })
 export class ProfileComponent {
   private readonly translate = inject(TranslateService);
