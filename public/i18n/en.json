@@ -12,8 +12,8 @@
       "email": "dungnm11123@gmail.com",
       "phone": "+84 090-369-8954",
       "linkedin": "dungnm-software-engineer",
-      "careerObjective": "Aiming to grow into a Senior Backend Engineer / Technical Lead within the next 3 years, taking ownership of system architecture and driving technical decisions for high-scale, distributed platforms. Seeking an environment that values engineering ownership, cross-team collaboration, and continuous learning — where I can apply deep backend expertise to build reliable, scalable systems while mentoring and growing alongside the team.",
-      "summary": "Backend Software Engineer with 2+ years of experience specializing in high-concurrency systems using Node.js/TypeScript (NestJS) and AWS. Skilled in designing core system architecture — including newsfeed ranking, distributed locking, and service migration — for production systems serving 20K+ users at 2,000 req/s peak. Proven track record of delivering up to 80% latency reduction and minimizing data loss incidents under traffic surges, with strong fundamentals in system design, concurrency control, and cross-service communication (gRPC, RabbitMQ, GraphQL)."
+      "careerObjective": "Aiming to grow into a Senior Backend Engineer / Technical Lead within the next 3 years, specializing in high-concurrency distributed systems. Seeking to take ownership of architecture decisions at scale — from data consistency and fault tolerance to service decomposition — while mentoring engineers and driving engineering culture within the team.",
+      "summary": "Backend Software Engineer with 2.5+ years of experience architecting high-concurrency, event-driven systems using Node.js/TypeScript (NestJS) and AWS. Led key architectural decisions — newsfeed ranking, distributed locking, monolith-to-microservices migration — for production systems serving 20K+ users at 2,000 req/s peak, cutting API latency by up to 80% and eliminating data-loss incidents under traffic surges. Strong fundamentals in concurrency control, system design, and cross-service communication (gRPC, RabbitMQ, GraphQL)."
     },
     "skills": [
       {
