@@ -10,7 +10,7 @@
       "title": "Backend Software Engineer",
       "location": "Tan Phu, Ho Chi Minh City",
       "email": "dungnm11123@gmail.com",
-      "phone": "+84 090-369-8954",
+      "phone": "+84 90-369-8954",
       "linkedin": "dungnm-software-engineer",
       "careerObjective": "Hướng đến vị trí Senior Backend Engineer / Technical Lead trong 3 năm tới, chuyên sâu về các hệ thống phân tán có độ đồng thời (concurrency) cao. Mong muốn được chủ động đưa ra các quyết định kiến trúc ở quy mô lớn — từ tính nhất quán dữ liệu, khả năng chịu lỗi đến việc phân rã dịch vụ (service decomposition) — đồng thời mentoring các kỹ sư khác và góp phần xây dựng văn hóa kỹ thuật trong đội ngũ.",
       "summary": "Backend Software Engineer với hơn 2.5 năm kinh nghiệm thiết kế kiến trúc cho các hệ thống event-driven có độ đồng thời cao, sử dụng Node.js/TypeScript (NestJS) và AWS. Trực tiếp đưa ra các quyết định kiến trúc quan trọng — newsfeed ranking, distributed locking, migration từ monolith sang microservices — cho hệ thống production phục vụ hơn 20K người dùng với 2,000 req/s ở thời điểm cao điểm, giúp giảm tới 80% độ trễ API và loại bỏ tình trạng mất dữ liệu khi traffic tăng đột biến. Nền tảng vững chắc về concurrency control, system design, và giao tiếp liên dịch vụ (gRPC, RabbitMQ, GraphQL)."
