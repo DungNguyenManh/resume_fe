@@ -16,6 +16,7 @@ export interface ResumeProfile {
   email: string;
   phone: string;
   linkedin: string;
+  facebook: string;
   careerObjective: string;
   summary: string;
 }

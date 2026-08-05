@@ -12,6 +12,7 @@
       "email": "dungnm11123@gmail.com",
       "phone": "+84 90-369-8954",
       "linkedin": "dungnm-software-engineer",
+      "facebook": "https://www.facebook.com/dungnm1011",
       "careerObjective": "Aiming to grow into a Senior Backend Engineer / Technical Lead within the next 3 years, specializing in high-concurrency distributed systems. Seeking to take ownership of architecture decisions at scale — from data consistency and fault tolerance to service decomposition — while mentoring engineers and driving engineering culture within the team.",
       "summary": "Backend Software Engineer with 2.5+ years of experience architecting high-concurrency, event-driven systems using Node.js/TypeScript (NestJS) and AWS. Led key architectural decisions — newsfeed ranking, distributed locking, monolith-to-microservices migration — for production systems serving 20K+ users at 2,000 req/s peak, cutting API latency by up to 80% and eliminating data-loss incidents under traffic surges. Strong fundamentals in concurrency control, system design, and cross-service communication (gRPC, RabbitMQ, GraphQL)."
     },
