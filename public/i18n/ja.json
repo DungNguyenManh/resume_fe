@@ -13,8 +13,8 @@
       "phone": "+84 90-369-8954",
       "linkedin": "dungnm-software-engineer",
       "facebook": "https://www.facebook.com/dungnm1011",
-      "careerObjective": "今後3年以内にSenior Backend Engineer / Technical Leadへの成長を目指しています。特に高並行性(high-concurrency)を要する分散システムを専門とし、GoとNode.js/TypeScriptを基盤としています。データ整合性や耐障害性からサービス分割(service decomposition)まで、大規模なアーキテクチャ設計の意思決定を主体的に担いながら、エンジニアのメンタリングやチームのエンジニアリング文化の醸成にも貢献したいと考えています。",
-      "summary": "Node.js/TypeScript(NestJS)、Go/Gin、AWSを用いた高並行性・イベント駆動システムの設計において2.5年以上の経験を持つBackend Software Engineerです。ニュースフィードのランキング(Hybrid Fan-out)、分散ロック、モノリスからマイクロサービスへの移行など、主要なアーキテクチャの意思決定を主導し、2万人以上のユーザーとピーク時2,000 req/sを処理する本番システムにおいて、APIレスポンスタイムを1秒以上から200ms未満に短縮し、トラフィック急増時のデータベース読み取りを80%削減しました。100万件以上のレコードや数GB規模のエクスポートを、メモリ使用量を一定に保ちながら処理する高スループットなGoパイプラインも構築しました。並行処理制御、システム設計、サービス間通信(RabbitMQ、Socket.io、GraphQL)に強みを持っています。"
+      "careerObjective": "今後3年以内にSenior Backend Engineer / Technical Leadへの成長を目指しています。主にGoを用いた高並行性(high-concurrency)の分散システムを専門とし、Node.js/TypeScriptを補完的な技術スタックとしています。データ整合性やパフォーマンス最適化からサービス分割(service decomposition)まで、大規模なアーキテクチャ設計の意思決定を主体的に担いながら、エンジニアのメンタリングやチームのエンジニアリング品質の向上にも貢献したいと考えています。",
+      "summary": "Go(Gin)、Node.js/TypeScript(NestJS)、AWSを用いた高並行性・イベント駆動システムの開発において2.5年以上の経験を持つBackend Software Engineerです。本番環境で主要なアーキテクチャ設計を担当し、Neo4jのグラフ走査とRedisキャッシュを組み合わせたHybrid Fan-out方式のニュースフィード(APIレスポンスタイムを1秒以上から200ms未満に短縮)、数千件の同時リクエストに対応する報酬交換機能のためのRedis Luaスクリプトと悲観的ロック、CQRSによるモノリスからマイクロサービスへの移行(重要なビジネスモジュールでテストカバレッジ90%以上)を設計・実装しました。また、100万件以上のレコード処理や最大9GBのCSVレポートのエクスポートを、RAM使用量を40〜80MBに抑えて実行する高スループットなGoワーカーを構築しました。Redisキャッシュパイプラインにより、ピーク時のデータベース直接読み取りを80%削減しました。並行処理、システム設計、サービス間通信(RabbitMQ、WebSocket、GraphQL)に強みを持っています。インターン2名をメンタリングし、2名とも正社員として採用されました。"
     },
     "skills": [
       {
